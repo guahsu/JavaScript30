@@ -1,8 +1,8 @@
 ## JavaScript30
 是一個來自加拿大的工程師WES BOS製作的一系列純javascript練習，  
 共有30個主題，每個主題有一個教學影片及範例檔案。  
->[WES BOS的github:https://github.com/wesbos/JavaScript30](https://github.com/wesbos/JavaScript30)  
-[javascript30官網:https://javascript30.com/](https://javascript30.com/)
+>[[WES BOS的GitHub]](https://github.com/wesbos/JavaScript30)  
+[[JavaScript30官網]](https://javascript30.com/)
 
 ## 目的
 實作範例，並紀錄每個練習的過程。  
@@ -22,7 +22,8 @@
 若有任何錯誤或指教請在PR給我，謝謝:)!
 
 ## 題目
-[01 - JavaScript Drum Kit](https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit)[OnlineDemo](01_Java-Script-Drum-Kit)
+[01 - JavaScript Drum Kit](https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit)
+[-[DEMO]](https://guahsu.github.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html)
 02 - JS and CSS Clock  
 03 - CSS Variables  
 04 - Array Cardio Day 1  
