@@ -26,9 +26,8 @@
 | [[DEMO]](https://guahsu.github.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html)  
 [02 - JS and CSS Clock 心得](https://github.com/guahsu/JavaScript30/tree/master/02_JS-and-CSS-Clock) 
 | [[DEMO]](https://guahsu.github.io/JavaScript30/02_JS-and-CSS-Clock/index-GuaHsu.html)  
-[03 - CSS Variables 心得]
-(https://github.com/guahsu/JavaScript30/tree/master/03_CSS-Variables) 
-| [[DEMO]](https://guahsu.github.io/JavaScript30/03_CSS-Variables/index-GuaHsu.html)
+[03 - CSS Variables 心得](https://github.com/guahsu/JavaScript30/tree/master/03_CSS-Variables) 
+| [[DEMO]](https://guahsu.github.io/JavaScript30/03_CSS-Variables/index-GuaHsu.html)  
 04 - Array Cardio Day 1  
 05 - Flex Panel Gallery  
 06 - Type Ahead  
