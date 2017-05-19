@@ -28,7 +28,8 @@
 | [[DEMO]](https://guahsu.github.io/JavaScript30/02_JS-and-CSS-Clock/index-GuaHsu.html)  
 [03 - CSS Variables 心得](https://github.com/guahsu/JavaScript30/tree/master/03_CSS-Variables) 
 | [[DEMO]](https://guahsu.github.io/JavaScript30/03_CSS-Variables/index-GuaHsu.html)  
-04 - Array Cardio Day 1  
+[04 - Array Cardio Day 1 心得](https://github.com/guahsu/JavaScript30/tree/master/04_Array-Cardio-Day-1) 
+| [[DEMO]](https://guahsu.github.io/JavaScript30/04_Array-Cardio-Day-1/index-GuaHsu.html)  
 05 - Flex Panel Gallery  
 06 - Type Ahead  
 07 - Array Cardio Day 2  
