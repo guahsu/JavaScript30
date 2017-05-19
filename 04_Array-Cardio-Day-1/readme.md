@@ -135,7 +135,7 @@ const alpha = people.sort((lastOne, nextOne) => {
 題目：分別計算data內每個種類的數量  
 解答：
 ````javascript
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick’];
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
 const transportation = data.reduce(function (obj, item) {
     if (!obj[item]) {
