@@ -1,4 +1,6 @@
 # **02 - JS and CSS Clock**
+>首次上傳：2017/05/17  
+最後修改：2017/05/19
 
 ## **主題**
 用JS與CSS搭配製作一個實時的時鐘效果。
@@ -42,6 +44,7 @@
 ### **transition-timing-function: cubic-bezier()**
 設定動畫轉場所依據的貝茲曲線，可以透過chrome的開發者工具來進行可視化調整。
 
+>參閱：[MDN-transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform?v=control)
 
 ## 探索
 ### 轉了個角度，調了點指針

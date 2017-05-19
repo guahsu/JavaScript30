@@ -1,3 +1,7 @@
+# **03 - CSS Variables**
+>首次上傳：2017/05/18  
+最後修改：2017/05/19
+
 ## **主題**
 用JS與CSS搭配製作一個即時的濾淨效果，
 特效為調整內距、模糊、邊框色。
@@ -22,15 +26,15 @@ document.querySelector('#test ').getAttribute('data-no'); // 輸出123
 ````javascript
 style.setProperty('padding', '15px');
 /* 等同於 */
-style.padding = 15px;
+style.padding = '15px';
 ````
 但在實際應用中，前者的做法會很方便帶參數進去。
->參照:https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty
+>參照:[MDN-setProperty](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
 
 ## **CSS語法&備註**
 ### **filter:blur()**
 CSS3的濾鏡功能，blur是高斯模糊，參數越高越模糊。
->參照(包含其他濾鏡):https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+>參照:[MDN-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 
 ## 探索
 依樣畫葫蘆的新增了`grayscale()`的效果，  
