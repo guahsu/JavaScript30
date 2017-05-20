@@ -31,7 +31,7 @@
 [04 - Array Cardio Day 1 心得](https://github.com/guahsu/JavaScript30/tree/master/04_Array-Cardio-Day-1) 
 | [[DEMO]](https://guahsu.github.io/JavaScript30/04_Array-Cardio-Day-1/index-GuaHsu.html)  
 [05 - Flex Panel Gallery 心得](https://github.com/guahsu/JavaScript30/tree/master/05_Flex-Panel-Gallery) 
-| [[DEMO]](https://guahsu.github.io/JavaScript30/05_Flex-Panel-Gallery/index-GuaHsu.html)  
+| [[DEMO]](https://guahsu.github.io/JavaScript30//05_Flex-Panel-Gallery/index-GuaHsu.html)  
 06 - Type Ahead  
 07 - Array Cardio Day 2  
 08 - Fun with HTML5 Canvas  
