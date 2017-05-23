@@ -19,7 +19,7 @@
 
 ## **JavaScript語法&備註**
 ### **1. some()**
-題目：people是否有19歲以上的人？
+題目：people是否有19歲以上的人？  
 解答：
 ````javascript
 const isAdult = people.some(person => ((new Date()).getFullYear()) - person.year >= 19);
@@ -28,7 +28,7 @@ const isAdult = people.some(person => ((new Date()).getFullYear()) - person.year
 >參閱：[MDN-Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
 ### **2. every() **
-題目：people是否每個人都19歲以上？
+題目：people是否每個人都19歲以上？  
 解答：
 ````javascript
 const allAdults = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
@@ -38,7 +38,7 @@ const allAdults = people.every(person => ((new Date()).getFullYear()) - person.y
 >參閱：[MDN-Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 
 ### **３. find() **
-題目：在comments中找到id是823423的資料
+題目：在comments中找到id是823423的資料  
 解答：
 ````javascript
 const comment = comments.find(comment => comment.id === 823423);
@@ -48,7 +48,7 @@ const comment = comments.find(comment => comment.id === 823423);
 >參閱：[MDN-Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
 ### **4. findIndex() & slice() & spared**
-題目：在comments中找到id是823423的資料索引值, 並透過索引值刪除這筆資料
+題目：在comments中找到id是823423的資料索引值, 並透過索引值刪除這筆資料  
 解答：
 ````javascript
 const index = comments.findIndex(comment => comment.id === 823423);
