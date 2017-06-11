@@ -36,7 +36,8 @@
 | [[DEMO]](https://guahsu.github.io/JavaScript30/06_Type-Ahead/index-GuaHsu.html)  
 [07 - Array Cardio Day 2 心得](https://github.com/guahsu/JavaScript30/tree/master/07_Array-Cardio-Day-2) 
 | [[DEMO]](https://guahsu.github.io/JavaScript30/07_Array-Cardio-Day-2/index-GuaHsu.html)  
-08 - Fun with HTML5 Canvas  
+[08 - Fun with HTML5 Canvas](https://github.com/guahsu/JavaScript30/tree/master/08_Fun-with-HTML5-Canvas) 
+| [[DEMO]](https://guahsu.github.io/JavaScript30/08_Fun-with-HTML5-Canvas/index-GuaHsu.html)  
 09 - Dev Tools Domination  
 10 - Hold Shift and Check Checkboxes  
 11 - Custom Video Player  
