@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('----------');
+    console.log('console.log');
+
+    // Interpolated
+    console.log('----------');
+    console.log('Hello，%s', 'World.');
+
+    // Styled
+    console.log('----------');
+    console.log('%c 文字加上font-style', 'font-size:50px; background:#ccc; text-shadow: 1px 1px 0 blue')
+
+
+    // warning!
+    console.log('----------');
+    console.warn('用warn讓console顯示出警告圖示');
+
+    // Error :|
+    console.log('----------');
+    console.error('用error讓console顯示出錯誤圖示');
+
+    // Info
+    console.log('----------');
+    console.info('用info讓console顯示出資訊圖示');
+
+    // Testing
+    console.log('----------');
+    var a = 5;
+    var b = 10;
+    console.assert(a > b, 'false'); // 這行才會被印出來
+    console.assert(a < b, 'true');
+
+    // clearing
+    console.log('----------');
+    console.log('用console.clear()來清除console');
+    //console.clear();
+
+    // Viewing DOM Elements
+    var test = function() { return 'test function'; };
+    test.run = function() { return 'test.run()'; };
+    console.log(test);
+    console.dir(test);
+
+    // Grouping together
+    console.log('----------');
+    var products = [{ no: 10001, name: 'Apple', price: 10 }, { no: 10002, name: 'Banana', price: 5 }];
+    products.forEach(products => {
+        console.groupCollapsed(`${products.no}`);
+        console.log(`name:${products.name}`);
+        console.log(`price:$${products.price}`);
+        console.groupEnd(`${products.no}`);
+    });
+
+    // counting
+    console.log('----------');
+    console.count('a');
+    console.count('b');
+    console.count('b');
+    console.count('c');
+    console.count('c');
+    console.count('c');
+
+    // timing
+    console.log('----------');
+    (function(){
+        console.time('GET使用時間');
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://github.com/guahsu/JavaScript-TravelMap/blob/master/data/viewZip.json');
+        xhr.send();
+        xhr.onload = function(){
+        console.timeEnd('GET使用時間');
+        }
+    })()
+
+    // table
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
