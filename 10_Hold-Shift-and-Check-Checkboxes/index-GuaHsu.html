@@ -67,10 +67,12 @@
             font-size: 20px;
             font-weight: 100;
         }
-        .GuaHsu-header span{
+
+        .GuaHsu-header span {
             margin: 0 5px;
         }
-        .GuaHsu-header a{
+
+        .GuaHsu-header a {
             text-decoration: none;
             color: unset;
         }
@@ -120,30 +122,37 @@
     </div>
 
     <script>
+        // 選取所有checkbox
         const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
         let click; // 單純的點擊
         let selectClick; // 按下shift後的選取 
-        let cancelClick; // 按下shidt後的取消
-
+        let cancelClick; // 按下shift後的取消
+         
         const handleCheck = function (e) {
-            if (e.shiftKey && this.checked) {    
+            if (e.shiftKey && this.checked) {
                 selectClick = this;
                 selectBox();
             } else if (e.shiftKey && !this.checked) {
                 cancelClick = this;
                 cancleBox();
-            } else {
+            } else if (this.checked) {
                 click = this;
                 selectClick = undefined;
                 cancelClick = undefined;
+            } else {
+                click = undefined;
+                selectClick = undefined;
+                cancelClick = undefined;
             }
-            //選取
+            // 選取功能
             function selectBox() {
                 let inBetween = false;
                 checkboxes.forEach(checkbox => {
+                    // 將選取範圍內的checkbox加上標記
                     if (checkbox === selectClick || checkbox === click) {
                         inBetween = !inBetween;
                     }
+                    // 將有標記的checkbox勾選（且click不為undefined與selectClick是為了避免點自己全選）
                     if (inBetween && click !== undefined && click !== selectClick) {
                         checkbox.checked = true;
                     }
@@ -153,24 +162,45 @@
             function cancleBox(el) {
                 let inBetween = false;
                 checkboxes.forEach(checkbox => {
-                    if (checkbox === cancelClick) {
+                    // 將選取範圍內的checkbox加上標記
+                    if (checkbox === selectClick || checkbox === cancelClick) {
                         inBetween = !inBetween;
                     }
-                    if (inBetween) {
+                    // 將有標記的checkbox勾選（以及selectClick）
+                    if (inBetween || checkbox === selectClick) {
                         checkbox.checked = false;
                     }
                 })
             }
         }
-        // 偵測勾選
+        // 偵測checkbox的click
         checkboxes.forEach(checkbox => { checkbox.addEventListener('click', handleCheck) });
-        // 偵測shift放開，讓click恢復未選曲
-        window.addEventListener('keyup', (e)=>{
-            if(e.keyCode === 16 || e.shiftKey) {
+        // 偵測當shift放開時讓click恢復未選取的狀態
+        window.addEventListener('keyup', (e) => {
+            if (e.keyCode === 16 || e.shiftKey) {
                 click = undefined;
             };
         })
 
+        // 原作者的做法
+        // const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+        // let lastChecked;
+        // function handleCheck(e) {
+        //   let inBetween = false;
+        //   if (e.shiftKey && this.checked) {
+        //     checkboxes.forEach(checkbox => {
+        //       if (checkbox === this || checkbox === lastChecked) {
+        //         inBetween = !inBetween;
+        //         console.log('STarting to check them inbetween!');
+        //       }
+        //       if (inBetween) {
+        //         checkbox.checked = true;
+        //       }
+        //     });
+        //   }
+        //   lastChecked = this;
+        // }
+        //checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
     </script>
 </body>
 

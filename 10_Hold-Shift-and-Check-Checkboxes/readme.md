@@ -2,93 +2,124 @@
 >首次上傳：2017/07/02
 
 ## **主題**
-介紹chrome的開發工具，各種`console.`的用法：） 
-[[BLOG]](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/)  
-[[DEMO]](https://guahsu.io/JavaScript30/09_Dev-Tools-Domination/index-GuaHsu.html) 
+介紹如何使用Shift + 左鍵來完成連續區間選取，  
+在這篇的探索中，我增加了連續區間取消選取及部分問題的改善。
+[[BLOG]](https://guahsu.io/2017/07/JavaScript30-10-Hold-Shift-and-Check-Checkboxes/)  
+[[原版DEMO]](https://guahsu.io/JavaScript30/10_Hold-Shift-and-Check-Checkboxes/index-FINISHED.html) 
+[[探索版DEMO]](https://guahsu.io/JavaScript30/10_Hold-Shift-and-Check-Checkboxes/index-GuaHsu.html) 
 
-## DOM BREAK ON .. 
-介紹了DOM的中斷點模式，分別有三種觸發模式可選（可複選）
-### 1. subtree modifications: 當子元素點發生變化時
-### 2. arrtibute modifications: 當元素發生變化時
-### 3. node removal: 當元素被移除時
-使用方法為如圖，對選取的元素按下`右鍵 > Break on...` 即可。  
+## **步驟**
+### step1 基本設定
+用`querySelectorAll('.inbox input[type="checkbox"]`來把HTML中的checkbox選起來，  
+並設置一個變數`let lastChecked;`作為稍後勾選位置的紀錄使用。
+### step2 觸發設定
+把所有選取的checkboxes使用`forEach`來加入`addEventListener('click', handelCheck)`。
+### step3 handelCheck
+在這個function裡面，建立了一個區域變數`let inBetween = false`來當作選取區間的標記，  
+並在每次觸發時檢查是否”有按著shift點擊”`if(e.shiftKey && this.checked)`，  
+若有的話則再跑一次`forEach`來透過`inBetween`對每個checkbox進行區間標記，  
+把屬於區間內的checkbox勾起來，並記錄此次點擊的位置。
+#### 程式備註
+````javascript
+//選取所有的checkbox
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+let lastChecked;
 
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/0.png)
+function handleCheck(e) {
+    let inBetween = false;
+    // 檢查是否按著shift點選
+    if (e.shiftKey && this.checked) {
+        checkboxes.forEach(checkbox => {
+        // 當前點選的checkbox開始記錄到最後一個點選的checkbox關閉標記
+        if (checkbox === this || checkbox === lastChecked) {
+            inBetween = !inBetween;
+            console.log('STarting to check them inbetween!');
+        }
+        // 勾選區間內為true的checkbox
+        if (inBetween) {
+            checkbox.checked = true;
+        }
+        });
+    }
+    lastChecked = this;
+}
+// 為每個checkbox加上click事件
+checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+````
 
-## CONSOLE.THINGS
-介紹各種console用法
+## **探索**
+一開始做完原本作者講述的方法（也就是上面那段）的做法後，  
+發現有些小問題，例如直接對著同一個checkbox點選會導致全選，  
+也沒有辦法做區間取消選取的功能，所以重新寫了一個可以區間選取/取消的版本。
 
-### 1. console.log()
-就是我們常用的那個log啦XD  
+### 分析動作
+想一下會使用連續選取時，我自己的動作會有這幾種：
 
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/1.png)
+1. 單選：單純的點一下進行勾選/取消
+2. 範圍選取：按住shift後點到其他checkbox
+3. 範圍取消：在2按住shift的狀態下，點到已勾選的checkbox
 
-### 2. console.log('%s', value)
-可將字串中的%s顯示為指定的參數  
+所以我依據這些動作分別寫了對應的功能。
 
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/2.png)
-
-### 3. console.log('%c', font-style)
-可將字串顯示為參數中帶入的css樣式（font系列的style)  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/3.png)
-
-### 4. console.warning()
-顯示為警告圖示  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/4.png)
-
-### 5. console.error()
-顯示為錯誤圖示  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/5.png %)
-
-### 6. console.info()
-顯示為資訊圖示
->！當我在測試時，並沒有出現資訊
-
-### 7. console.assert()
-可以拿來測試判斷是否為真，若為false則回傳對應的錯誤訊息。  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/7.png)
-
-### 8. console.clear()
-清除console的所有訊息。
->補充：Mac上清除的快捷鍵為`⌘(Command)+K`、Windows快捷鍵則為`CTRL+L`
-
-### 9. console.dir()
-可以顯示選取物件的所有屬性，  
-我寫的這個範例中，`console.log(test)`只能返回test本身的function內容，  
-若使用`console.dir(test)`則可以印出test本身及其所擁有的屬性（注意屬性第一行run）。  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/9.png)
-
-### 10.console.groupCollapsed() & console.groupEnd()
-可以把輸出資訊透過group包起來。  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/10.png)
-
-### 11. console.count()
-用來累加出現次數。  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/11.png)
-
-### 12.console.time() & console.timeEnd()
-可以用來計算區域內執行的時間，我寫的範例是計算取回json資料的時間。  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/12.png)
-
-### 13.console.table()
-可以把資料整理成table格式方便瀏覽。  
-
-![](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/13.png)
-
-
-## **其他**
-還有很多可以透過開發工具來協助的，
-例如監測整個網頁的讀取速度可以透過`Network`這個頁籤來查看，
-也可以設置模擬各種網路速度、或是離線狀態等..
-
-非常推薦觀看六角學院的免費課程，可以透過影片了解更多開發工具的操作範例。
->推薦：[六角學院-Chrome 網頁除錯功能大解密(免費)](https://www.udemy.com/chrome-devtools/)
->參閱：[Google Dev Tool API](https://developers.google.com/web/tools/chrome-devtools/)
+### 程式備註
+````javascript
+// 選取所有checkbox
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+let click; // 單純的點擊
+let selectClick; // 按下shift後的選取 
+let cancelClick; // 按下shift後的取消
+    
+const handleCheck = function (e) {
+    if (e.shiftKey && this.checked) {
+        selectClick = this;
+        selectBox();
+    } else if (e.shiftKey && !this.checked) {
+        cancelClick = this;
+        cancleBox();
+    } else if (this.checked) {
+        click = this;
+        selectClick = undefined;
+        cancelClick = undefined;
+    } else {
+        click = undefined;
+        selectClick = undefined;
+        cancelClick = undefined;
+    }
+    // 選取功能
+    function selectBox() {
+        let inBetween = false;
+        checkboxes.forEach(checkbox => {
+            // 將選取範圍內的checkbox加上標記
+            if (checkbox === selectClick || checkbox === click) {
+                inBetween = !inBetween;
+            }
+            // 將有標記的checkbox勾選（且click不為undefined與selectClick是為了避免點自己全選）
+            if (inBetween && click !== undefined && click !== selectClick) {
+                checkbox.checked = true;
+            }
+        })
+    }
+    //取消選取
+    function cancleBox(el) {
+        let inBetween = false;
+        checkboxes.forEach(checkbox => {
+            // 將選取範圍內的checkbox加上標記
+            if (checkbox === selectClick || checkbox === cancelClick) {
+                inBetween = !inBetween;
+            }
+            // 將有標記的checkbox勾選（以及selectClick）
+            if (inBetween || checkbox === selectClick) {
+                checkbox.checked = false;
+            }
+        })
+    }
+}
+// 偵測checkbox的click
+checkboxes.forEach(checkbox => { checkbox.addEventListener('click', handleCheck) });
+// 偵測當shift放開時讓click恢復未選取的狀態
+window.addEventListener('keyup', (e) => {
+    if (e.keyCode === 16 || e.shiftKey) {
+        click = undefined;
+    };
+})
+````
