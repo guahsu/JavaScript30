@@ -2,7 +2,7 @@
 >首次上傳：2017/06/24
 
 ## **主題**
-介紹chrome的開發工具，各種`console.`的用法：） 
+介紹chrome的開發工具，各種`console.`的用法：）  
 [[BLOG]](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/)  
 [[DEMO]](https://guahsu.io/JavaScript30/09_Dev-Tools-Domination/index-GuaHsu.html) 
 
