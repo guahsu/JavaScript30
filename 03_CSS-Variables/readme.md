@@ -1,10 +1,11 @@
 # **03 - CSS Variables**
 >首次上傳：2017/05/18  
-最後修改：2017/05/19
 
 ## **主題**
 用JS與CSS搭配製作一個即時的濾淨效果，
-特效為調整內距、模糊、邊框色。
+特效為調整內距、模糊、邊框色。  
+[[BLOG]](https://guahsu.io/2017/05/JavaScript30-03-CSS-Variables/)  
+[[DEMO]](https://guahsu.github.io/JavaScript30/03_CSS-Variables/index-GuaHsu.html)  
 
 ## **步驟**
 #### step1

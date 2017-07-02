@@ -1,9 +1,10 @@
 # **04 - Array Cardio Day 1**
 >首次上傳：2017/05/19  
-最後修改：2017/05/19
 
 ## **主題**
-作者用了8個範例來介紹關於Array的各種操作。
+作者用了8個範例來介紹關於Array的各種操作。  
+[[BLOG]](https://guahsu.io/2017/05/JavaScript30-04-Array-Cardio-Day-1/)  
+[[DEMO]](https://guahsu.io/JavaScript30/04_Array-Cardio-Day-1/index-GuaHsu.html)  
 
 ## **步驟**
 #### 練習範例內有提供了3組資料：

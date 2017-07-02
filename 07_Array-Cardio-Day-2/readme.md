@@ -3,8 +3,8 @@
 
 ## **主題**
 延續[[04 - Array Cardio Day 1]](https://github.com/guahsu/JavaScript30/tree/master/04_Array-Cardio-Day-1)的Array各種操作，這次有5個範例。  
-  
-[[DEMO]](https://guahsu.github.io/JavaScript30/07_Array-Cardio-Day-2/index-GuaHsu.html)
+[[BLOG]](https://guahsu.io/2017/05/JavaScript30-07-Array-Cardio-Day-2/)  
+[[DEMO]](https://guahsu.io/JavaScript30/07_Array-Cardio-Day-2/index-GuaHsu.html) 
 
 ## **步驟**
 #### 練習範例內有提供了2組資料：

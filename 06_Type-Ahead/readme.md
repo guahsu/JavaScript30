@@ -1,8 +1,11 @@
 # **06 - Type Ahead**
+>首次上傳：2017/05/22  
 
 ## **主題**
-利用`fetch()`來取回json檔案，並透過`filter()`及`RegExp()`等語法來製作搜尋即時顯示關聯效果！
-
+利用`fetch()`來取回json檔案，並透過`filter()`及`RegExp()`等語法來製作搜尋即時顯示關聯效果！  
+[[BLOG]](https://guahsu.io/2017/05/JavaScript30-06-Type-Ahead/)  
+[[DEMO]](https://guahsu.io/JavaScript30/06_Type-Ahead/index-GuaHsu.html) 
+ 
 ## **步驟**
 #### step1
 預設已經有建立了一個城市的.json清單，  

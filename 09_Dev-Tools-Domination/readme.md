@@ -3,7 +3,8 @@
 
 ## **主題**
 介紹chrome的開發工具，各種`console.`的用法：） 
-[[DEMO]](https://guahsu.io/JavaScript30/09_Dev-Tools-Domination/index-GuaHsu.html)  
+[[BLOG]](https://guahsu.io/2017/06/JavaScript30-09-Dev-Tools-Domination/)  
+[[DEMO]](https://guahsu.io/JavaScript30/09_Dev-Tools-Domination/index-GuaHsu.html) 
 
 ## DOM BREAK ON .. 
 介紹了DOM的中斷點模式，分別有三種觸發模式可選（可複選）

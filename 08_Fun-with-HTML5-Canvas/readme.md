@@ -3,8 +3,9 @@
 
 ## **主題**
 使用HTML5的Canvas來製作一個畫布，  
-透過滑鼠來繪製彩色粗細不一的線條～
-[[DEMO]](https://guahsu.io/JavaScript30/08_Fun-with-HTML5-Canvas/index-GuaHsu.html)  
+透過滑鼠來繪製彩色粗細不一的線條～  
+[[BLOG]](https://guahsu.io/2017/06/JavaScript30-08-Fun-with-HTML5-Canvas/)  
+[[DEMO]](https://guahsu.github.io/JavaScript30/08_Fun-with-HTML5-Canvas/index-GuaHsu.html) 
 
 ## **步驟**
 ### step1

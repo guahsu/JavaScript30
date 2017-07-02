@@ -1,9 +1,10 @@
 # **02 - JS and CSS Clock**
 >首次上傳：2017/05/17  
-最後修改：2017/05/19
 
 ## **主題**
-用JS與CSS搭配製作一個實時的時鐘效果。
+用JS與CSS搭配製作一個實時的時鐘效果。  
+[[BLOG]](https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/)  
+[[DEMO]](https://guahsu.io/JavaScript30/02_JS-and-CSS-Clock/index-GuaHsu.html)  
 
 ## **步驟**
 #### step1.製作時針、分針、秒針  
