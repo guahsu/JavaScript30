@@ -22,7 +22,7 @@
 若有任何錯誤或指教請在PR給我，謝謝:)!
 
 ## 題目
-[01 - JavaScript Drum Kit 心得](https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit) 
+[01 - JavaScript Drum Kit 心得](https://github.com/guahsu/JavaScript30/tree/master/01_Java-Script-Drum-Kit)
 | [[DEMO]](https://guahsu.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html)  
 [02 - JS and CSS Clock 心得](https://github.com/guahsu/JavaScript30/tree/master/02_JS-and-CSS-Clock) 
 | [[DEMO]](https://guahsu.io/JavaScript30/02_JS-and-CSS-Clock/index-GuaHsu.html)  
