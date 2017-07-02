@@ -1,5 +1,7 @@
-# 09 - Dev Tools Domination
+# 10 - Hold Shift and Check Checkboxes
 >首次上傳：2017/07/02
+
+![](https://guahsu.io/2017/07/JavaScript30-10-Hold-Shift-and-Check-Checkboxes/demo10.gif)
 
 ## **主題**
 介紹如何使用Shift + 左鍵來完成連續區間選取，  

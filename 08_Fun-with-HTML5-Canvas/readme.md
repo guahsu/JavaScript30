@@ -1,6 +1,8 @@
 # 08 - Fun with HTML5 Canvas
 >首次上傳：2017/06/11
 
+![](https://guahsu.io/2017/06/JavaScript30-08-Fun-with-HTML5-Canvas/demo8.png)
+
 ## **主題**
 使用HTML5的Canvas來製作一個畫布，  
 透過滑鼠來繪製彩色粗細不一的線條～  

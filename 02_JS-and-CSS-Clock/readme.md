@@ -1,6 +1,8 @@
 # **02 - JS and CSS Clock**
 >首次上傳：2017/05/17  
 
+![](https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/demo2.png)
+
 ## **主題**
 用JS與CSS搭配製作一個實時的時鐘效果。  
 [[BLOG]](https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/)  

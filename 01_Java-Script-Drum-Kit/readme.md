@@ -1,6 +1,8 @@
 # **01 - JavaScript Drum Kit**
 >首次上傳：2017/05/16   
 
+![](https://guahsu,io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/demo1.png)
+
 ## **主題**
 透過JS使鍵盤按下後播放出對應按鍵的聲音，並同時產生一個特效，  
 在按下其他鍵後會關閉該特效並於新按鍵中啟用。  

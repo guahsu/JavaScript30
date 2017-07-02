@@ -1,6 +1,8 @@
 # **05 - Flex Panel Gallery**
 >首次上傳：2017/05/20  
 
+![](https://guahsu.io/2017/05/JavaScript30-05-Flex-Panel-Gallery/demo5.png)
+
 ## **主題**
 用CSS與JS來製作一個點擊後會動畫展開的圖片展示效果，  
 運用到了CSS的flex、transform、transition.. 這篇比較偏向css知識！  

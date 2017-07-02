@@ -1,6 +1,8 @@
 # **06 - Type Ahead**
 >首次上傳：2017/05/22  
 
+![](https://guahsu.io/2017/05/JavaScript30-06-Type-Ahead/demo6.png)
+
 ## **主題**
 利用`fetch()`來取回json檔案，並透過`filter()`及`RegExp()`等語法來製作搜尋即時顯示關聯效果！  
 [[BLOG]](https://guahsu.io/2017/05/JavaScript30-06-Type-Ahead/)  
