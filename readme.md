@@ -18,7 +18,7 @@
 並在每個練習加上index-GuaHsu.html來放置我所完成的版本。
 
 ## 其他
-我會放在自己的部落格一份，並在GitHub上也留存一份。  
+我會放在自己的[部落格(https://guahsu.io)](https://guahsu.io)一份，並在GitHub上也留存一份。  
 若有任何錯誤或指教請在PR給我，謝謝:)!
 
 ## 題目
@@ -40,7 +40,8 @@
 | [[DEMO]](https://guahsu.github.io/JavaScript30/08_Fun-with-HTML5-Canvas/index-GuaHsu.html)  
 [09 - Dev Tools Domination](https://github.com/guahsu/JavaScript30/tree/master/09_Dev-Tools-Domination)
 | [[DEMO]](https://guahsu.io/JavaScript30/09_Dev-Tools-Domination/index-GuaHsu.html)   
-10 - Hold Shift and Check Checkboxes  
+[10 - Hold Shift and Check Checkboxes](https://github.com/guahsu/JavaScript30/tree/master/10_Hold-Shift-and-Check-Checkboxes)
+| [[DEMO]](https://guahsu.io/JavaScript30/10_Hold-Shift-and-Check-Checkboxes/index-GuaHsu.html)  
 11 - Custom Video Player  
 12 - Key Sequence Detection  
 13 - Slide in on Scroll  

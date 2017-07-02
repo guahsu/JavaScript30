@@ -1,56 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Array Cardio 💪💪</title>
-  <script src="ga.js"></script>
+    <meta charset="UTF-8">
+    <title>Array Cardio 💪💪</title>
+    <script src="ga.js"></script>
 </head>
+
 <body>
-  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-  <script>
-    // ## Array Cardio Day 2
+    <style>
+        .GuaHsu-header {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+            color: #7ff3cb;
+            font-size: 20px;
+            font-weight: 100;
+        }
 
-    const people = [
-      { name: 'Wes', year: 1988 },
-      { name: 'Kait', year: 1986 },
-      { name: 'Irv', year: 1970 },
-      { name: 'Lux', year: 2015 },
-    ];
+        .GuaHsu-header span {
+            margin: 0 5px;
+        }
 
-    const comments = [
-      { text: 'Love this!', id: 523423 },
-      { text: 'Super good', id: 823423 },
-      { text: 'You are the best', id: 2039842 },
-      { text: 'Ramen is my fav food ever', id: 123523 },
-      { text: 'Nice Nice Nice!', id: 542328 }
-    ];
+        .GuaHsu-header a {
+            text-decoration: none;
+            color: unset;
+        }
+    </style>
+    <div class="GuaHsu-header">
+        <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+        <span>|</span>
+        <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+    </div>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <script>
+        // ## Array Cardio Day 2
 
-    // Some and Every Checks
-    // Array.prototype.some() // is at least one person 19?
+        const people = [
+            { name: 'Wes', year: 1988 },
+            { name: 'Kait', year: 1986 },
+            { name: 'Irv', year: 1970 },
+            { name: 'Lux', year: 2015 },
+        ];
 
-    const isAdult = people.some(person => ((new Date()).getFullYear()) - person.year >= 19);
-    console.log({isAdult});
+        const comments = [
+            { text: 'Love this!', id: 523423 },
+            { text: 'Super good', id: 823423 },
+            { text: 'You are the best', id: 2039842 },
+            { text: 'Ramen is my fav food ever', id: 123523 },
+            { text: 'Nice Nice Nice!', id: 542328 }
+        ];
 
-    // Array.prototype.every() // is everyone 19?
-    const allAdults = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
-    console.log({allAdults});
+        // Some and Every Checks
+        // Array.prototype.some() // is at least one person 19?
 
-    // Array.prototype.find()
-    // Find is like filter, but instead returns just the one you are looking for
-    // find the comment with the ID of 823423
-    const comment = comments.find(comment => comment.id === 823423);
-    console.log(comment);
+        const isAdult = people.some(person => ((new Date()).getFullYear()) - person.year >= 19);
+        console.log({ isAdult });
 
-    // Array.prototype.findIndex()
-    // Find the comment with this ID
-    // delete the comment with the ID of 823423
-    const index = comments.findIndex(comment => comment.id === 823423);
-    const newComments = [
-      ...comments.slice(0, index),
-      ...comments.slice(index + 1)
-    ];
-    console.table(newComments);
+        // Array.prototype.every() // is everyone 19?
+        const allAdults = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
+        console.log({ allAdults });
 
-  </script>
+        // Array.prototype.find()
+        // Find is like filter, but instead returns just the one you are looking for
+        // find the comment with the ID of 823423
+        const comment = comments.find(comment => comment.id === 823423);
+        console.log(comment);
+
+        // Array.prototype.findIndex()
+        // Find the comment with this ID
+        // delete the comment with the ID of 823423
+        const index = comments.findIndex(comment => comment.id === 823423);
+        const newComments = [
+            ...comments.slice(0, index),
+            ...comments.slice(index + 1)
+        ];
+        console.table(newComments);
+    </script>
 </body>
+
 </html>

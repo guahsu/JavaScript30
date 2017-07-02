@@ -2,72 +2,94 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>HTML5 Canvas</title>
+    <meta charset="UTF-8">
+    <title>HTML5 Canvas</title>
 </head>
 
 <body>
-  <canvas id="draw" width="800" height="800"></canvas>
-  <script>
-    const canvas = document.querySelector('#draw');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    ctx.strokeStyle = '#BADA55';
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
-    ctx.lineWidth = 100;
-    
+    <style>
+        .GuaHsu-header {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+            color: #7ff3cb;
+            font-size: 20px;
+            font-weight: 100;
+        }
 
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
-    let hue = 0;
-    let direction = true;
-    
-    // GuaHsu
-    // ctx.globalCompositeOperation = 'copy';
-    
-    function draw(e) {
-      if (!isDrawing) { return; }
-      ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
-      ctx.beginPath();
-      ctx.moveTo(lastX, lastY);
-      ctx.lineTo(e.offsetX, e.offsetY);
-      ctx.stroke();
-      [lastX, lastY] = [e.offsetX, e.offsetY];
-      hue++;
-      if (hue >= 360) { 
-        hue = 0; 
-      }
-      if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) { 
-        direction = !direction; 
-      }
-      if (direction) {
-        ctx.lineWidth++;
-      } else {
-        ctx.lineWidth--;
-      }      
-    }
+        .GuaHsu-header span {
+            margin: 0 5px;
+        }
 
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mousedown', (e) => {
-      isDrawing = true;
-      [lastX, lastY] = [e.offsetX, e.offsetY];
-    });
-    canvas.addEventListener('mouseup', () => isDrawing = false);
-    canvas.addEventListener('mouseout', () => isDrawing = false);
+        .GuaHsu-header a {
+            text-decoration: none;
+            color: unset;
+        }
+    </style>
+    <div class="GuaHsu-header">
+        <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+        <span>|</span>
+        <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+    </div>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <script>
+        const canvas = document.querySelector('#draw');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        ctx.strokeStyle = '#BADA55';
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.lineWidth = 20;
 
 
-  </script>
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+        let hue = 0;
+        let direction = true;
 
-  <style>
-    html,
-    body {
-      margin: 0;
-    }
-  </style>
+        // GuaHsu
+        // ctx.globalCompositeOperation = 'copy';
+
+        function draw(e) {
+            if (!isDrawing) { return; }
+            ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+            hue++;
+            if (hue >= 360) {
+                hue = 0;
+            }
+            if (ctx.lineWidth >= 20 || ctx.lineWidth <= 1) {
+                direction = !direction;
+            }
+            if (direction) {
+                ctx.lineWidth++;
+            } else {
+                ctx.lineWidth--;
+            }
+        }
+
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+    </script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+    </style>
 
 </body>
 
