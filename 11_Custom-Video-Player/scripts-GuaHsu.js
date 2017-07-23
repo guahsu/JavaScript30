@@ -78,29 +78,29 @@ function eventKeydown(e) {
       break;
     //方向鍵右
     case 39:
-      skip('right');
+      skip('right')
       break;
   }
 }
 
-//Listener Area
+/* Hook up the event listners */
 video.addEventListener('click', togglePlay);
 toggle.addEventListener('click', togglePlay);
 
-video.addEventListener('progress', handleProgress);
-
-const progressEvents = ['click', 'mousemove', 'mousedown', 'mouseup'];
-progressEvents.forEach(progressEvent => {
-  progress.addEventListener(progressEvent, scrunb);
+ranges.forEach(range => {
+  range.addEventListener('change', handleRangeUpadte);
+  range.addEventListener('mousemove', handleRangeUpadte);
 })
 
 skipButtons.forEach(button => {
   button.addEventListener('click', skip);
 })
 
-ranges.forEach(range => {
-  range.addEventListener('change', handleRangeUpadte);
-  range.addEventListener('mousemove', handleRangeUpadte);
+video.addEventListener('progress', handleProgress);
+
+const progressEvents = ['click', 'mousemove', 'mousedown', 'mouseup'];
+progressEvents.forEach(progressEvent => {
+  progress.addEventListener(progressEvent, scrunb);
 })
 
 fullScreenBtn.addEventListener('click', fullScreen);
