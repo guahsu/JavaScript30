@@ -36,13 +36,13 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/06_Type-Ahead/index-GuaHsu.html)  
 [07 - Array Cardio Day 2 心得](https://github.com/guahsu/JavaScript30/tree/master/07_Array-Cardio-Day-2) 
 | [[DEMO]](https://guahsu.io/JavaScript30/07_Array-Cardio-Day-2/index-GuaHsu.html)  
-[08 - Fun with HTML5 Canvas](https://github.com/guahsu/JavaScript30/tree/master/08_Fun-with-HTML5-Canvas)
+[08 - Fun with HTML5 Canvas 心得](https://github.com/guahsu/JavaScript30/tree/master/08_Fun-with-HTML5-Canvas)
 | [[DEMO]](https://guahsu.io/JavaScript30/08_Fun-with-HTML5-Canvas/index-GuaHsu.html)  
-[09 - Dev Tools Domination](https://github.com/guahsu/JavaScript30/tree/master/09_Dev-Tools-Domination)
+[09 - Dev Tools Domination 心得](https://github.com/guahsu/JavaScript30/tree/master/09_Dev-Tools-Domination)
 | [[DEMO]](https://guahsu.io/JavaScript30/09_Dev-Tools-Domination/index-GuaHsu.html)   
-[10 - Hold Shift and Check Checkboxes](https://github.com/guahsu/JavaScript30/tree/master/10_Hold-Shift-and-Check-Checkboxes)
+[10 - Hold Shift and Check Checkboxes 心得](https://github.com/guahsu/JavaScript30/tree/master/10_Hold-Shift-and-Check-Checkboxes)
 | [[DEMO]](https://guahsu.io/JavaScript30/10_Hold-Shift-and-Check-Checkboxes/index-GuaHsu.html)  
-[11 - Custom Video Player](https://github.com/guahsu/JavaScript30/tree/master/11_Custom-Video-Player)
+[11 - Custom Video Player 心得](https://github.com/guahsu/JavaScript30/tree/master/11_Custom-Video-Player)
 | [[DEMO]](https://guahsu.io/JavaScript30/11_Custom-Video-Player/index-GuaHsu.html)  
 12 - Key Sequence Detection  
 13 - Slide in on Scroll  
