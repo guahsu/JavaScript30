@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript30 - 11 - Custom Video Player | Gua's Note</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            margin-top: 0px;
+        }
+        .GuaHsu-header {
+            position: absolute;
+            top:0;
+            width: 100%;
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+            color: #7ff3cb;
+            font-size: 20px;
+            font-weight: 100;
+            z-index: 999;
+        }
+        .GuaHsu-header span {
+            margin: 0 5px;
+        }
+        .GuaHsu-header a {
+            text-decoration: none;
+            color: unset;
+        }
+    </style>
+    <div class="GuaHsu-header">
+        <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+        <span>|</span>
+        <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+    </div>
+
+    <div class="player">
+        <video class="player__video viewer" src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164"></video>
+
+        <div class="player__controls">
+            <div class="progress">
+                <div class="progress__filled"></div>
+            </div>
+            <button class="player__button toggle" title="Toggle Play"><i class="icon-play"></i></button>
+            <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+            <div>
+                <i class="icon-volume-up"></i>
+                <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+            </div>
+            <button data-skip="-10" class="player__button skip_left"><i class="icon-backward"></i></button>
+            <button data-skip="25" class="player__button skip_right"><i class="icon-forward"></i></button>
+            <button class="player__button fullScreen" title="Full Screen"><i class="icon-fullscreen"></i></button>
+        </div>
+    </div>
+
+    <script src="scripts-GuaHsu.js"></script>
+</body>
+
+</html>
