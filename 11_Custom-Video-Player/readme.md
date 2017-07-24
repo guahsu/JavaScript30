@@ -7,9 +7,8 @@
 介紹如何使用HTML5的video tag來完成各種播放器功能，  
 播放/暫停、快進/快退、音量控制、速率控制等...
 
-<!-- more -->
-
->[[DEMO]](https://guahsu.io/JavaScript30/11_Custom-Video-Player/index-GuaHsu.html)   ｜ [JavaScript30介紹與記錄格式](https://github.com/guahsu/JavaScript30)
+[[BLOG]](https://guahsu.io/2017/07/JavaScript30-11-Custom-Video-Player/)  
+[[DEMO]](https://guahsu.io/JavaScript30/11_Custom-Video-Player/index-GuaHsu.html)
 
 ## **步驟**
 ### step1 基本設定
