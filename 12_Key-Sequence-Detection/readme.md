@@ -1,7 +1,7 @@
 # 12 - Key Sequence Detection
 >首次上傳：2017/07/26
 
-![](https://guahsu.io/2017/07/JavaScript30-12-Key-Sequence-Detection/demo12.png)
+![](https://guahsu.io/2017/07/JavaScript30-12-Key-Sequence-Detection/demo12.gif)
 
 ## **主題**
 記得以前玩遊戲常輸入的祕技嗎？上上下下左右左右BA之類的，    
