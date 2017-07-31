@@ -162,14 +162,18 @@
         const isActive = sliderImage.classList.contains('active');
         if (isHalfShown && isNotScrolledPast && !isActive) {
           const imageLink = sliderImage.dataset.imglink;
-          console.log(imageLink);
-          //sliderImage.classList.add('active');
           sliderImage.setAttribute('src', imageLink);
-          sliderImage.style.height = '100%';
+          sliderImage.addEventListener('', imgActive(sliderImage));
         }
       })
     }
 
+    function imgActive(sliderImage) {
+      //setTimeout(function() {
+         console.log('...');
+         sliderImage.classList.add('active');
+      //}, 1);
+    }
     window.addEventListener('scroll', debounce(checkSlide));
   </script>
 
@@ -217,9 +221,7 @@
     .slide-in {
       opacity: 0;
       transition: all .5s;
-      background-color:#333; 
       height:200px;
-      width: 200px;
     }
 
     .align-left.slide-in {
@@ -232,6 +234,7 @@
 
     .slide-in.active {
       opacity: 1;
+      height: unset;
       transform: translateX(0%) scale(1);
     }
   </style>
