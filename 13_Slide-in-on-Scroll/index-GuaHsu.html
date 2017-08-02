@@ -163,17 +163,13 @@
         if (isHalfShown && isNotScrolledPast && !isActive) {
           const imageLink = sliderImage.dataset.imglink;
           sliderImage.setAttribute('src', imageLink);
-          sliderImage.addEventListener('', imgActive(sliderImage));
+          sliderImage.addEventListener('load', () => {
+            sliderImage.classList.add('active');
+          });
         }
       })
     }
 
-    function imgActive(sliderImage) {
-      //setTimeout(function() {
-         console.log('...');
-         sliderImage.classList.add('active');
-      //}, 1);
-    }
     window.addEventListener('scroll', debounce(checkSlide));
   </script>
 
