@@ -3,11 +3,60 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <title>JavaScript30 - 13 - Slide in on Scroll | Gua's Note</title>
 </head>
 
 <body>
+  <style>
+    body {
+      margin-top: 48px;
+    }
 
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+    <span>|</span>
+    <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+  </div>
   <div class="site-wrap">
 
     <h1>Slide in on Scroll</h1>
@@ -65,14 +114,13 @@
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero
       placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero
-      perferendis, deserunt et incidunt eveniet <img src="" data-imglink="http://unsplash.it/200/200"
-        class="align-right slide-in"> temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione
-      saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur
-      expedita dignissimos, non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur,
-      culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque
-      dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt
-      labore sequi, repellat laboriosam est, doloremque culpa reiciendis tempore excepturi. Enim nostrum fugit itaque vel
-      corporis ullam sed tenetur ipsa qui rem quam error sint, libero. Laboriosam rem, ratione. Autem blanditiis</p>
+      perferendis, deserunt et incidunt eveniet <img src="" data-imglink="http://unsplash.it/200/200" class="align-right slide-in">      temporibus doloremque possimus facilis. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam
+      deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos,
+      non quos distinctio, eos rerum facilis eligendi. Asperiores laudantium, rerum ratione consequatur, culpa consectetur
+      possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus
+      aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis. Deserunt labore sequi, repellat laboriosam
+      est, doloremque culpa reiciendis tempore excepturi. Enim nostrum fugit itaque vel corporis ullam sed tenetur ipsa qui
+      rem quam error sint, libero. Laboriosam rem, ratione. Autem blanditiis</p>
 
 
     <p>laborum neque repudiandae quam, cumque, voluptate veritatis itaque, placeat veniam ad nisi. Expedita, laborum reprehenderit
@@ -155,14 +203,17 @@
 
     function checkSlide(e) {
       sliderImages.forEach(sliderImage => {
-        const slideInAt = (window.scrollY + window.innerHeight) - (sliderImage.height / 2);
-        const imageBottom = sliderImage.offsetTop + sliderImage.height;
-        const isHalfShown = slideInAt > sliderImage.offsetTop;
-        const isNotScrolledPast = window.scrollY < imageBottom;
-        const isActive = sliderImage.classList.contains('active');
-        if (isHalfShown && isNotScrolledPast && !isActive) {
+        // 取得圖片的定位點
+        const slideInAt = (window.scrollY + window.innerHeight) - (sliderImage.height);
+        // 判斷是否滾動到圖片的頂端
+        const isImgTop = slideInAt > sliderImage.offsetTop;
+
+        if (isImgTop) {
+          // 透過dataset取得html裡面的data-imglink連結
           const imageLink = sliderImage.dataset.imglink;
+          // 用setAttribute來設置取得的連結
           sliderImage.setAttribute('src', imageLink);
+          // 增加一個事件，當圖片載入完成後套用css的動畫效果
           sliderImage.addEventListener('load', () => {
             sliderImage.classList.add('active');
           });
@@ -217,7 +268,7 @@
     .slide-in {
       opacity: 0;
       transition: all .5s;
-      height:200px;
+      height: 200px;
     }
 
     .align-left.slide-in {
