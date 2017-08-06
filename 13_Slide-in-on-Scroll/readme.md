@@ -116,7 +116,7 @@ function checkSlide(e) {
 以此練習來說，`sliderImage`的父元素就是`window`。
 >參閱：[MDN-Window.innerHeight](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight)
 
-**dataset**
+**HTMLElement.dataset**
 透過`dataset`可以取回在HTML中設置的`data-*`內容，  
 注意使用`dataset`時property不用再將加上`data-`開頭，例如：    
 ````html
@@ -125,4 +125,4 @@ function checkSlide(e) {
 ````javascript
 document.querySelector('.test').dataset.greet; // hi
 ````
->參閱：[MDN-Window.innerHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset)
+>參閱：[MDN-HTMLElement.dataset](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset)
