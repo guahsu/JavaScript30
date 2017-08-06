@@ -1,7 +1,7 @@
 # 13 - Slide in on Scroll
 >首次上傳：2017/08/06
 
-![](https://guahsu.io/2017/07/JavaScript30-13-Slide-in-on-Scroll/demo13.gif)
+![](https://guahsu.io/2017/08/JavaScript30-13-Slide-in-on-Scroll/demo13.gif)
 
 ## **主題**
 這篇介紹當滾動視窗到定點時動畫滑入圖片的效果，  

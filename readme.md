@@ -45,8 +45,9 @@
 [11 - Custom Video Player 心得](https://github.com/guahsu/JavaScript30/tree/master/11_Custom-Video-Player)
 | [[DEMO]](https://guahsu.io/JavaScript30/11_Custom-Video-Player/index-GuaHsu.html)  
 [12 - Key Sequence Detection 心得](https://github.com/guahsu/JavaScript30/tree/master/12_Key-Sequence-Detection)
-| [[DEMO]](https://guahsu.io/JavaScript30/12_Key-Sequence-Detection/index-GuaHsu.html)    
-13 - Slide in on Scroll  
+| [[DEMO]](https://guahsu.io/JavaScript30/12_Key-Sequence-Detection/index-GuaHsu.html)      
+[13 - Slide in on Scroll 心得](https://github.com/guahsu/JavaScript30/tree/master/13_Slide-in-on-Scroll)
+| [[DEMO]](https://guahsu.io/JavaScript30/13_Slide-in-on-Scroll/index-GuaHsu.html)   
 14 - JavaScript References VS Copying  
 15 - LocalStorage  
 16 - Mouse Move Shadow  
