@@ -15,7 +15,7 @@ JavaScript中的原始型別(Primitive Type)：
 4. Null
 5. Undefine
 
-#### step2 **物件型別**
+### step2 **物件型別**
 JavaScript中的物件型別(Object Type)：  
 1. 使用者自訂的物件 - `var obj = {}`
 2. 內建的物件型別 - Array, Date, Math, RegExp ..  
@@ -29,7 +29,7 @@ console.log(arr['0']); // 'a'
 typeof(arr); // 'object'
 ````
 
-#### step3 **Call by value**
+### step3 **Call by value**
 原始型別都是Call by value，當複製時不影響彼此，  
 如以下範例（上述個原始型別皆是）：
 ````javascript
@@ -42,7 +42,7 @@ console.log(a, b); // a b
 最初的`b = a`使`b`指向與`a`同一個記憶體位置(存放字串a)，  
 而當`b = 'b'`時，b建立了一個記憶體位置存放字串b，並指向該位置。
 
-#### step4 **Call by refrence**
+### step4 **Call by refrence**
 當物件型別被複製使用時，是會被彼此改變的  
 如以下範例：
 ````javascript
@@ -65,7 +65,7 @@ console.log(obj, obj2);// { a: 1, b: 3 } { a: 1, b: 3 }
 但在`arr2[1] = 'c'`時，`arr2`仍指著與`arr`同個位置，  
 所以當改變了索引[1]的值時，`arr`及`arr2`的索引[1]都被變更了。  
 
-#### step5 **陣列的複製**
+### step5 **陣列的複製**
 為了避免Call by refrence時會去異動到原本的陣列，  
 就要先把原本的陣列做一次複製，用剛才的範例來做，  
 有以下幾種方法：
@@ -116,7 +116,7 @@ console.log(arr, arr2);// ['a', 'b'] ['a', 'c']
 ````
 >參閱：[MDN-Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
-#### step6 **物件的複製**
+### step6 **物件的複製**
 同樣的，物件也會有call by refrence的特性，  
 所以與陣列相同，使用之前的範例來做物件的複製：
 
@@ -132,7 +132,7 @@ console.log(obj, obj2);// { a: 1, b: 3 } { a: 1, b: 3 }
 
 >參閱：[MDN-Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
-#### step7 **JSON.parse * JSON.stringify**
+### step7 **JSON.parse * JSON.stringify**
 利用`JSON.parse * JSON.stringify`來把目標對象作轉換賦值的動作，
 不論目標對象是什麼型別，都可以用這招來做複製：
 ````javascript
