@@ -22,10 +22,15 @@ JavaScript中的物件型別(Object Type)：
 對，`Array`也是個物件。
 
 ````javascript
+// JS的陣列中可以使用物件的字串用法
 var arr = ['a', 'b', 'c'];
 console.log(arr[0]); // 'a'
 console.log(arr['0']); // 'a'
-// 在陣列中使用物件的字串方法也可以找到索引值為0的資料
+
+// JS的陣列也可以塞屬性
+arr.test = function() { return 'Hi'; };
+arr.test(); // 'Hi'
+
 typeof(arr); // 'object'
 ````
 
