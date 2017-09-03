@@ -68,18 +68,29 @@
         <li>
           <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''}/>
           <label for="item${i}">${plate.text}</label>
+          <span data-index=${i}>delete<span>
         </li>
       `;
     }).join('');
   }
 
+  // GuaHsu add delete
   function toggleDone(e) {
-    if(!e.target.matches('input')) return;
+    let save = false;
     const el = e.target;
     const index = el.dataset.index;
-    items[index].done = !items[index].done;
-    localStorage.setItem('items', JSON.stringify(items));
-    populateList(items, itemsList);
+    if(e.target.matches('input')){
+      items[index].done = !items[index].done;
+      save = true;
+    }
+    if(e.target.matches('span')){
+      items.splice(index, 1);
+      save = true;
+    }
+    if(save){
+      localStorage.setItem('items', JSON.stringify(items));
+      populateList(items, itemsList);  
+    }
   }
 
   // GuaHsu add Check All
