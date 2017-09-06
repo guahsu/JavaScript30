@@ -5,7 +5,7 @@
 
 ## **主題**
 這篇介紹LocalStorage的用法，  
-透過一個小菜單功能來透過localstorage做資料增刪功能。
+透過一個小菜單來透過localstorage做資料增刪功能。
 
 [[BLOG]](https://guahsu.io/2017/09/JavaScript30-15-LocalStorage/)  
 [[DEMO]](https://guahsu.io/JavaScript30/15_LocalStorage/index-GuaHsu.html)
@@ -196,4 +196,4 @@ LocalStorage很實用，之前做的兩個小練習也都有使用上：
 ## 其他
 終於JS30系列完成一半了，當初的目標就是把這系列先練習完，  
 並強迫自己每篇都要擴充或調整原有功能並記錄心得，  
-很多東西真的是在寫心得時會有重新的領悟。
+很多東西真的是在寫心得時會有重新領悟並加深印象的感覺:)。
