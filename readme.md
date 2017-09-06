@@ -49,7 +49,8 @@
 [13 - Slide in on Scroll 心得](https://github.com/guahsu/JavaScript30/tree/master/13_Slide-in-on-Scroll)
 | [[DEMO]](https://guahsu.io/JavaScript30/13_Slide-in-on-Scroll/index-GuaHsu.html)   
 [14 - JavaScript References VS Copying](https://github.com/guahsu/JavaScript30/tree/master/14_JavaScript-References-VS-Copying)
-| [[DEMO]](https://guahsu.io/JavaScript30/14_JavaScript-References-VS-Copying/index-GuaHsu.html)   [15 - LocalStorage](https://github.com/guahsu/JavaScript30/blob/master/15_LocalStorage/index-GuaHsu.html)
+| [[DEMO]](https://guahsu.io/JavaScript30/14_JavaScript-References-VS-Copying/index-GuaHsu.html)  
+[15 - LocalStorage](https://github.com/guahsu/JavaScript30/blob/master/15_LocalStorage/)
 | [[DEMO]](https://guahsu.io/JavaScript30/15_LocalStorage/index-GuaHsu.html)   
 16 - Mouse Move Shadow  
 17 - Sort Without Articles  
