@@ -3,7 +3,7 @@
 
 ## **主題**
 讓文字的陰影隨滑鼠位置偏移  
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-16-Mouse Move Shadow)  
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-16-Mouse-Move-Shadow/)  
 
 ## **步驟**
 ### step1 設定目標區域與基本偏移量
