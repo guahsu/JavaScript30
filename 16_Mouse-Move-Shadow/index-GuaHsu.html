@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <title>JavaScript30 - 16 - Mouse Move Shadow | Gua's Note</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin-top: 48px;
+    }
+
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+    <span>|</span>
+    <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+  </div>
+
+
+  <div class="hero">
+    <h1 contenteditable>🔥WOAH!</h1>
+  </div>
+
+  <style>
+    html {
+      color: black;
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    h1 {
+      text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+      font-size: 100px;
+    }
+  </style>
+
+  <script>
+    const hero = document.querySelector('.hero');
+    const text = document.querySelector('h1');
+    const walk = 100;
+
+
+    function shadow(e) {
+      const { offsetHeight: height,
+              offsetWidth: width } = hero;
+      let { offsetX: x,
+            offsetY: y  } = e;
+
+      if (this !== e.target) {
+        x = x + e.target.offsetLeft;
+        y = y + e.target.offsetTop;
+      }
+
+      const xWalk = Math.round((x / width * walk) - (walk/2));
+      const yWalk = Math.round((y / height * walk) - (walk/2));
+      text.style.textShadow = `
+        ${xWalk}px ${yWalk}px 0px rgba(0, 0, 0, 0.5),
+        ${xWalk * -1}px ${yWalk}px 0px rgba(0, 0, 0, 0.5),
+        ${yWalk}px ${xWalk * -1}px 0px rgba(0, 0, 0, 0.5),
+        ${yWalk * -1}px ${xWalk}px 0px rgba(0, 0, 0, 0.5)
+      `
+    }
+    hero.addEventListener('mousemove', shadow);
+  </script>
+</body>
+
+</html>
