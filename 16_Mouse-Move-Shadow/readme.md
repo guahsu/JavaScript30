@@ -2,7 +2,8 @@
 >首次上傳：2017/10/02
 
 ## **主題**
-讓文字的陰影隨滑鼠位置偏移  
+透過textShadow讓文字的陰影隨滑鼠位置偏移，  
+並稍微帶到ES6的解構賦值的用法。
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-16-Mouse-Move-Shadow/)  
 
 ## **步驟**
