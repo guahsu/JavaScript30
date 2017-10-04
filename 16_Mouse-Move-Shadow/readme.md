@@ -3,7 +3,7 @@
 
 ## **主題**
 透過textShadow讓文字的陰影隨滑鼠位置偏移，  
-並稍微帶到ES6的解構賦值的用法。
+並稍微帶到ES6的解構賦值的用法。  
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-16-Mouse-Move-Shadow/)  
 
 ## **步驟**
@@ -42,7 +42,7 @@ function shadow(e) {
 
 ## **Javascript語法&備註**
 **解構賦值(Destructuring assignment)**
-透過解構賦值，可以把直接把物件/陣列中的值塞入變數中，
+透過解構賦值，可以把直接把物件/陣列中的值塞入變數中，  
 擷取一小段程式碼做說明：
 ```javascript
 // 下面這段等同於 const height = hero.offsetHeight;
@@ -51,8 +51,8 @@ const { offsetHeight: height } = hero;
 let { offsetX: x } = e;
 ```
 >參閱:[MDN-Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-關於解構賦值對我來說目前還是需要很用力的去閱讀才能讀懂，
-雖然可以簡寫並縮短不少程式碼，但使用上滿不直覺的，
+關於解構賦值對我來說目前還是需要很用力的去閱讀才能讀懂，  
+雖然可以簡寫並縮短不少程式碼，但使用上滿不直覺的，  
 所以我自己目前還是會用舊的賦值寫法多，努力中。
 
 **Math.round**
@@ -60,8 +60,10 @@ let { offsetX: x } = e;
 >參閱:[MDN-Math.round()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round)
 
 ## **CSS語法備註**
-// offset-x | offset-y | blur-radius | color
+```css
+/* offset-x | offset-y | blur-radius | color */
 text-shadow: 1px 1px 2px black;
+```
 >參閱:[MDN-text-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
 
 

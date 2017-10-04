@@ -54,7 +54,8 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/15_LocalStorage/index-GuaHsu.html)   
 [16 - Mouse Move Shadow](https://github.com/guahsu/JavaScript30/tree/master/16_Mouse-Move-Shadow)
 | [[DEMO]](https://guahsu.io/JavaScript30/16_Mouse-Move-Shadow/index-GuaHsu.html)   
-17 - Sort Without Articles  
+[17 - Sort Without Articles](https://github.com/guahsu/JavaScript30/tree/master/17_Sort-Without-Articles)
+| [[DEMO]](https://guahsu.io/JavaScript30/17_Sort-Without-Articles/index-GuaHsu.html)   
 18 - Adding Up Times with Reduce  
 19 - Webcam Fun  
 20 - Speech Detection  
