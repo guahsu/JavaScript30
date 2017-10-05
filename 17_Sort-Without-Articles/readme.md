@@ -31,7 +31,7 @@ const sortedBands = bands.sort((a, b) => (strip(a) > strip(b)) ? 1 : -1);
 ```
 
 ### step3 把排序完的渲染到HTML中
-使用`map`與`join`來組成`<li>`元素放置
+使用`map`與`join`來組成`<li>`元素放置
 ```javascript
 document.querySelector('#bands').innerHTML = 
       sortedBands.map(band => `<li>${band}</li>`).join('');
@@ -41,4 +41,3 @@ document.querySelector('#bands').innerHTML =
 ## 其他
 這篇相對比較簡單一些，  
 運用到都是之前有練習過的語法:D
-
