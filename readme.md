@@ -56,7 +56,8 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/16_Mouse-Move-Shadow/index-GuaHsu.html)   
 [17 - Sort Without Articles](https://github.com/guahsu/JavaScript30/tree/master/17_Sort-Without-Articles)
 | [[DEMO]](https://guahsu.io/JavaScript30/17_Sort-Without-Articles/index-GuaHsu.html)   
-18 - Adding Up Times with Reduce  
+[18 - Adding Up Times with Reduce](https://github.com/guahsu/JavaScript30/tree/master/18_Adding-Up-Times-with-Reduce)
+| [[DEMO]](https://guahsu.io/JavaScript30/18_Adding-Up-Times-with-Reduce/index-GuaHsu.html)   
 19 - Webcam Fun  
 20 - Speech Detection  
 21 - Geolocation  

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <title>JavaScript30 - 18 - Adding Up Times with Reduce | Gua's Note</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin-top: 48px;
+    }
+
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+    <span>|</span>
+    <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+  </div>
+
+  <h1>使用console介面來看總秒數</h1>
+  <ul class="videos">
+    <li data-time="5:43">
+      Video 1
+    </li>
+    <li data-time="2:33">
+      Video 2
+    </li>
+    <li data-time="3:45">
+      Video 3
+    </li>
+    <li data-time="0:47">
+      Video 4
+    </li>
+    <li data-time="5:21">
+      Video 5
+    </li>
+    <li data-time="6:56">
+      Video 6
+    </li>
+    <li data-time="3:46">
+      Video 7
+    </li>
+    <li data-time="5:25">
+      Video 8
+    </li>
+    <li data-time="3:14">
+      Video 9
+    </li>
+    <li data-time="3:31">
+      Video 10
+    </li>
+    <li data-time="5:59">
+      Video 11
+    </li>
+    <li data-time="3:07">
+      Video 12
+    </li>
+    <li data-time="11:29">
+      Video 13
+    </li>
+    <li data-time="8:57">
+      Video 14
+    </li>
+    <li data-time="5:49">
+      Video 15
+    </li>
+    <li data-time="5:52">
+      Video 16
+    </li>
+    <li data-time="5:50">
+      Video 17
+    </li>
+    <li data-time="9:13">
+      Video 18
+    </li>
+    <li data-time="11:51">
+      Video 19
+    </li>
+    <li data-time="7:58">
+      Video 20
+    </li>
+    <li data-time="4:40">
+      Video 21
+    </li>
+    <li data-time="4:45">
+      Video 22
+    </li>
+    <li data-time="6:46">
+      Video 23
+    </li>
+    <li data-time="7:24">
+      Video 24
+    </li>
+    <li data-time="7:12">
+      Video 25
+    </li>
+    <li data-time="5:23">
+      Video 26
+    </li>
+    <li data-time="3:34">
+      Video 27
+    </li>
+    <li data-time="8:22">
+      Video 28
+    </li>
+    <li data-time="5:17">
+      Video 29
+    </li>
+    <li data-time="3:10">
+      Video 30
+    </li>
+    <li data-time="4:43">
+      Video 31
+    </li>
+    <li data-time="19:43">
+      Video 32
+    </li>
+    <li data-time="0:47">
+      Video 33
+    </li>
+    <li data-time="0:47">
+      Video 34
+    </li>
+    <li data-time="3:14">
+      Video 35
+    </li>
+    <li data-time="3:59">
+      Video 36
+    </li>
+    <li data-time="2:43">
+      Video 37
+    </li>
+    <li data-time="4:17">
+      Video 38
+    </li>
+    <li data-time="6:56">
+      Video 39
+    </li>
+    <li data-time="3:05">
+      Video 40
+    </li>
+    <li data-time="2:06">
+      Video 41
+    </li>
+    <li data-time="1:59">
+      Video 42
+    </li>
+    <li data-time="1:49">
+      Video 43
+    </li>
+    <li data-time="3:36">
+      Video 44
+    </li>
+    <li data-time="7:10">
+      Video 45
+    </li>
+    <li data-time="3:44">
+      Video 46
+    </li>
+    <li data-time="3:44">
+      Video 47
+    </li>
+    <li data-time="4:36">
+      Video 48
+    </li>
+    <li data-time="3:16">
+      Video 49
+    </li>
+    <li data-time="1:10">
+      Video 50
+    </li>
+    <li data-time="6:10">
+      Video 51
+    </li>
+    <li data-time="2:14">
+      Video 52
+    </li>
+    <li data-time="3:44">
+      Video 53
+    </li>
+    <li data-time="5:05">
+      Video 54
+    </li>
+    <li data-time="6:03">
+      Video 55
+    </li>
+    <li data-time="12:39">
+      Video 56
+    </li>
+    <li data-time="1:56">
+      Video 57
+    </li>
+    <li data-time="4:04">
+      Video 58
+    </li>
+  </ul>
+  <script>
+    // 透過Array.from或是[...]來將querySelectorAll取回的NodeList轉Array
+    const timeNodes = Array.from(document.querySelectorAll('[data-time'));
+    // 取得秒數的操作
+    const seconds = timeNodes
+      // 取出每個元素中的data-time資料
+      .map(node => node.dataset.time)
+
+      .map(timeCode => {
+        // 用解構賦值的方式分別取出split(':')後的分與秒
+        // 再透過一個map執行parseFloat將字串轉數值
+        const [mins, secs] = timeCode.split(':').map(parseFloat);
+        // 回傳這組資料轉換後的總秒數
+        return (mins * 60) + secs;
+      })
+      // 用reduce來加總每次執行結果
+      .reduce((total, seconds) => total + seconds);
+
+    // 利用取得的總秒數來進行總共時分秒的計算
+    // 使用Math.floor取整數，再利用%來操作餘數
+    let secondsLeft = seconds;
+    const hours = Math.floor(secondsLeft / 3600);
+    secondsLeft = secondsLeft % 3600;
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
+
+    console.log(`${hours}:${mins}:${secondsLeft}`);
+  </script>
+</body>
+
+</html>
