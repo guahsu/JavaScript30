@@ -1,4 +1,5 @@
 .DS_Store
 _*
-.* 
+.*
 19_Webcam-Fun/node_modules/
+20_Speech-Detection/node_modules/
