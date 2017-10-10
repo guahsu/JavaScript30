@@ -60,7 +60,8 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/18_Adding-Up-Times-with-Reduce/index-GuaHsu.html)   
 [19 - Webcam Fun](https://github.com/guahsu/JavaScript30/tree/master/19_Webcam-Fun)
 | [[DEMO]](https://guahsu.io/JavaScript30/19_Webcam-Fun/index-GuaHsu.html)   
-20 - Speech Detection  
+[20 - Speech Detection](https://github.com/guahsu/JavaScript30/tree/master/20_Speech-Detection)
+| [[DEMO]](https://guahsu.io/JavaScript30/20_Speech-Detection/index-GuaHsu.html)  
 21 - Geolocation  
 22 - Follow Along Link Highlighter  
 23 - Speech Synthesis  

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <title>JavaScript30 - 20 - Speech Detection | Gua's Note</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <style>
+    body {
+      margin-top: 48px;
+    }
+
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+    <span>|</span>
+    <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+  </div>
+  <div class="words" contenteditable>
+  </div>
+
+  <script>
+    // 將全域環境中的SpeechRecognition指好(依據不同瀏覽器)
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    // 建立一個變數recognition來放為語音識別功能
+    const recognition = new SpeechRecognition();
+    // 讓語音識別回傳識別後的資訊（預設為false)
+    recognition.interimResults = true;
+
+    // 建立一個p元素在html設定好的文字區中
+    let p = document.createElement('p');
+    const words = document.querySelector('.words');
+    words.appendChild(p);
+
+    // 監聽識別回傳
+    recognition.addEventListener('result', e => {
+      // 將回傳資料先轉為array來操作
+      const transcript = Array.from(e.results)
+        // 透過map取得回傳陣列中的第0筆
+        .map(result => result[0])
+        // 在取得第0筆中的transcript
+        .map(result => result.transcript)
+        // 用join把連結符號消掉
+        .join('')
+
+      // 把回傳內容塞到p元素中
+      p.textContent = transcript;
+      // 如果回傳內容已經結束（一段話的結尾）在建立一個新的p元素來放下一段文字
+      if (e.results[0].isFinal) {
+        p = document.createElement('p');
+        words.appendChild(p);
+      }
+    })
+
+    // 監聽如果語音識別結束，則在開啟一次新的識別
+    recognition.addEventListener('end', recognition.start);
+    // 開始識別
+    recognition.start();
+  </script>
+
+
+  <style>
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      background: #ffc600;
+      font-family: 'helvetica neue';
+      font-weight: 200;
+      font-size: 20px;
+    }
+
+    .words {
+      max-width: 500px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem 1rem 5rem;
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+      background-size: 100% 3rem;
+      position: relative;
+      line-height: 3rem;
+    }
+
+    p {
+      margin: 0 0 3rem;
+    }
+
+    .words:before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      top: 0;
+      left: 30px;
+      bottom: 0;
+      border: 1px solid;
+      border-color: transparent #efe4e4;
+    }
+  </style>
+
+</body>
+
+</html>
