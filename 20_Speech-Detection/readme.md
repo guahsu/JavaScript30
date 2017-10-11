@@ -7,7 +7,14 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-20-Speech-Detection)
 
 ## **步驟**
-### step1 將SpeechRecognition建立起來
+### step1 啟動Local Server
+這個練習需要使用到local server，  
+如果你已經有一個可在本機run起來的server可以直接使用，  
+或在這層資料夾底下運行`npm install`來安裝`browser-sync`，  
+安裝完成後可以透過指令`npm start`來啟動localserver(預設port3000)，  
+>npm指令需要下載node.js來使用
+
+### step2 將SpeechRecognition建立起來
 ```javascript
 // 將全域環境中的SpeechRecognition指好(依據不同瀏覽器)
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -18,7 +25,7 @@ recognition.interimResults = true;
 ```
 參閱：[MDN-SpeechRecognition.interimResults](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/interimResults)
 
-### step2 把輸出區域準備好
+### step3 把輸出區域準備好
 ```javascript
 // 建立一個p元素在html設定好的文字區中
 let p = document.createElement('p');
@@ -26,7 +33,7 @@ const words = document.querySelector('.words');
 words.appendChild(p);
 ```
 
-### step3 對識別系統做監聽
+### step4 對識別系統做監聽
 識別回傳的資料是`NodeList`，所以要用`map`操作得先轉`array`
 ```javascript
 // 監聽識別回傳
