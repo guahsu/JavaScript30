@@ -20,6 +20,9 @@
 
 ### step3 撰寫程式
 ```javascript
+// 取得HTML中的元素
+const arrow = document.querySelector('.arrow');
+const speed = document.querySelector('.speed-value');
 // 使用watchPosition來取得使用者的地理位置及海拔、速度
 navigator.geolocation.watchPosition((data) => {
   // 若成功取回，則會回傳一組Position(這裡定義名稱為data)
