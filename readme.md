@@ -62,7 +62,8 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/19_Webcam-Fun/index-GuaHsu.html)   
 [20 - Speech Detection](https://github.com/guahsu/JavaScript30/tree/master/20_Speech-Detection)
 | [[DEMO]](https://guahsu.io/JavaScript30/20_Speech-Detection/index-GuaHsu.html)  
-21 - Geolocation  
+[21 - Geolocation](https://github.com/guahsu/JavaScript30/tree/master/21_Geolocation)
+| [[DEMO]](https://guahsu.io/JavaScript30/21_Geolocation/index-GuaHsu.html)    
 22 - Follow Along Link Highlighter  
 23 - Speech Synthesis  
 24 - Sticky Nav  
