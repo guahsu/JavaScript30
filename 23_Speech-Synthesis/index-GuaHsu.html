@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <title>JavaScript30 - 23 - Speech Synthesis | Gua's Note</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <style>
+    body {
+      margin-top: 48px;
+    }
+
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span><a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a></span>
+    <span>|</span>
+    <span><a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a></span>
+  </div>
+
+  <div class="voiceinator">
+
+    <h1>The Voiceinator 5000</h1>
+
+    <select name="voice" id="voices">
+      <option value="">Select A Voice</option>
+    </select>
+
+    <label for="rate">Rate:</label>
+    <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+
+    <label for="pitch">Pitch:</label>
+
+    <input name="pitch" type="range" min="0" max="2" step="0.1">
+    <textarea name="text">Hello! I love JavaScript 👍</textarea>
+    <button id="stop">Stop!</button>
+    <button id="speak">Speak</button>
+
+  </div>
+
+  <script>
+    // 基本建置及取得HTML元素
+    const msg = new SpeechSynthesisUtterance();
+    let voices = [];
+    const voicesDropdown = document.querySelector('[name="voice"]');
+    const options = document.querySelectorAll('[type="range"], [name="text"]');
+    const speakButton = document.querySelector('#speak');
+    const stopButton = document.querySelector('#stop');
+
+    // 使html中的輸入欄位成為SpeechSynthesisUtterance要使用的值
+    msg.text = document.querySelector('[name="text"]').value
+
+    // 取得語系資訊 
+    function populateVoices() {
+      voices = this.getVoices();
+      // 將所有語系塞進下拉選單中
+      voicesDropdown.innerHTML = voices
+        // 使用filter篩選出包含zh及en的語系
+        .filter(voice => voice.lang.includes('zh') || voice.lang.includes('en'))
+        // 篩選後的array透過map把資料組成html
+        .map(voice => `<option value=${voice.name}>${voice.name} (${voice.lang})</option>`)
+        // 用join來合併且消除原本陣列的逗點
+        .join('');
+    }
+
+    // 播放切換
+    function toggle(starOver = true) {
+      speechSynthesis.cancel();
+      if (starOver) {
+        speechSynthesis.speak(msg);
+      }
+    }
+
+    // 設定選擇的發音語系
+    function setVoice() {
+      msg.voice = voices.find(voice => voice.name === this.value);
+      toggle();
+    }
+
+    // 設定速率跟音準
+    function setOption() {
+      // 傳入的變數名稱與SpeechSynthesisUtterance本身的物件相同
+      // 所以可以透過這種方式來直接用
+      msg[this.name] = this.value;
+      toggle();
+    }
+
+    // 監聽語音清單變更後進行語系清單的更新
+    speechSynthesis.addEventListener('voiceschanged', populateVoices);
+    // 監聽語系選單，選擇後切換語系
+    voicesDropdown.addEventListener('change', setVoice);
+    // 監聽速率跟音準控制條，移動後設定
+    options.forEach(option => option.addEventListener('change', setOption));
+    // 播放按鈕
+    speakButton.addEventListener('click', toggle);
+    // 停止按鈕
+    stopButton.addEventListener('click', () => toggle(false));
+  </script>
+
+</body>
+
+</html>
