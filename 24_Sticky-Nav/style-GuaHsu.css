@@ -23,6 +23,7 @@ body {
   transition: transform 0.5s;
 }
 
+/* 當有fixed-nav時，把site-wrap縮放回1，讓整體有放大效果*/
 .fixed-nav .site-wrap {
   transform: scale(1);
 }
@@ -52,6 +53,7 @@ nav {
   z-index: 1;
 }
 
+/* 當有fixed-nav時，把nav改為fixed並加上陰影*/
 .fixed-nav nav {
   position: fixed;
   box-shadow: 0 5px rgba(0,0,0,0.1);
@@ -81,6 +83,8 @@ li.logo {
   font-size: 30px;
 }
 
+
+/* 當有fixed-nav時，把logo寬度增加，使其顯示出來*/
 .fixed-nav li.logo {
   max-width: 500px;
 }

@@ -68,7 +68,8 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/22_Follow-Along-Link-Highlighter/index-GuaHsu.html)   
 [23 - Speech Synthesis](https://github.com/guahsu/JavaScript30/tree/master/23_Speech-Synthesis)
 | [[DEMO]](https://guahsu.io/JavaScript30/23_Speech-Synthesis/index-GuaHsu.html)   
-24 - Sticky Nav  
+[24 - Sticky Nav](https://github.com/guahsu/JavaScript30/tree/master/24_Sticky-Nav)
+| [[DEMO]](https://guahsu.io/JavaScript30/24_Sticky-Nav/index-GuaHsu.html)   
 25 - Event Capture, Propagation, Bubbling and Once  
 26 - Stripe Follow Along Nav  
 27 - Click and Drag  
