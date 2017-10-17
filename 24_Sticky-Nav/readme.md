@@ -2,12 +2,10 @@
 
 ![](https://guahsu.io/2017/10/JavaScript30-24-Sticky-Nav/demo24.gif)
 
-# [DEMO](https://guahsu.io/JavaScript30/24_Sticky-Nav/index-GuaHsu.html)
-
 ## **主題**
 透過CSS的`position:fixed`與JavaScript的`classList`來製作網站常見的置頂選單。
 
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-24-Sticky-Nav)
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-24-Sticky-Nav) | [[DEMO]](https://guahsu.io/JavaScript30/24_Sticky-Nav/index-GuaHsu.html)
 
 ## **步驟**
 ### step1 取得頁面元素並偵測選單到頂部的高度
