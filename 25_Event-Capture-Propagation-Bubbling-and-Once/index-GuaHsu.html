@@ -111,8 +111,8 @@
   }
 
   divs.forEach(div => div.addEventListener('click', logText, {
-    capture: true,
-     //once: true
+    capture: false,
+    // once: true
   }));
 
   button.addEventListener('click', () => {

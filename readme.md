@@ -70,7 +70,8 @@
 | [[DEMO]](https://guahsu.io/JavaScript30/23_Speech-Synthesis/index-GuaHsu.html)   
 [24 - Sticky Nav](https://github.com/guahsu/JavaScript30/tree/master/24_Sticky-Nav)
 | [[DEMO]](https://guahsu.io/JavaScript30/24_Sticky-Nav/index-GuaHsu.html)   
-25 - Event Capture, Propagation, Bubbling and Once  
+[25 - Event Capture, Propagation, Bubbling and Once](https://github.com/guahsu/JavaScript30/tree/master/25_Event-Capture-Propagation-Bubbling-and-Once)
+| [[DEMO]](https://guahsu.io/JavaScript30/25_Event-Capture-Propagation-Bubbling-and-Once/index-GuaHsu.html)   
 26 - Stripe Follow Along Nav  
 27 - Click and Drag  
 28 - Video Speed Controller  
