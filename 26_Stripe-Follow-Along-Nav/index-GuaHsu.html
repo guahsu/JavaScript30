@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <title>JavaScript30 - 26 - Stripe Follow Along Nav | Gua's Note</title>
+</head>
+
+<body class="bod">
+  
+  <style>
+    body {
+      margin-top: 48px;
+    }
+
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span>
+      <a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a>
+    </span>
+    <span>|</span>
+    <span>
+      <a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a>
+    </span>
+  </div>
+  <h2>Cool</h2>
+  <nav class="top">
+    <div class="dropdownBackground">
+      <span class="arrow"></span>
+    </div>
+
+    <ul class="cool">
+      <li>
+        <a href="#">About Me</a>
+        <div class="dropdown dropdown1">
+          <div class="bio">
+            <img class="pic" src="https://guahsu.io/images/avatar.jpg">
+            <p>持續努力中的菜鳥工程師，摸索各種網頁基礎中。</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#">JavaScript</a>
+        <ul class="dropdown courses">
+          <li>
+            <span class="code">JavaScript30</span>
+            <a href="https://guahsu.io/categories/JavaScript30/">心得紀錄</a>
+          </li>
+          <li>
+            <span class="code">練習小作品</span>
+            <a href="https://guahsu.io/categories/Project/">清單</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Other Links</a>
+        <ul class="dropdown dropdown3">
+          <li>
+            <a class="button" href="https://www.facebook.com/GuaHsu">Facebook</a>
+          </li>
+          <li>
+            <a class="button" href="https://github.com/guahsu">GitHub</a>
+          </li>
+          <li>
+            <a class="button" href="https://guahsu.io/">Blog</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+      linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+      linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+      linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+    }
+
+    h2 {
+      margin-top: 0;
+      padding-top: .8em;
+    }
+
+    nav {
+      position: relative;
+      perspective: 600px;
+    }
+
+    .pic {
+      width: 100px;
+      border-radius: 50%;
+
+    }
+    .cool>li>a {
+      color: yellow;
+      text-decoration: none;
+      font-size: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px 20px;
+      display: inline-block;
+      margin: 20px;
+      border-radius: 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cool>li {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .dropdown {
+      opacity: 0;
+      position: absolute;
+      overflow: hidden;
+      padding: 20px;
+      top: -20px;
+      border-radius: 2px;
+      transition: all 0.5s;
+      transform: translateY(100px);
+      will-change: opacity;
+      display: none;
+    }
+
+    .trigger-enter .dropdown {
+      display: block;
+    }
+
+    .trigger-enter-active .dropdown {
+      opacity: 1;
+    }
+
+
+
+    .dropdownBackground {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 50px 100px rgba(50, 50, 93, .1), 0 15px 35px rgba(50, 50, 93, .15), 0 5px 15px rgba(0, 0, 0, .1);
+      transition: all 0.3s, opacity 0.1s, transform 0.2s;
+      transform-origin: 50% 0;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+    }
+
+    .dropdownBackground.open {
+      opacity: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      display: block;
+      background: white;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .bio {
+      min-width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.7;
+    }
+
+    .bio img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .courses {
+      min-width: 300px;
+    }
+
+    .courses li {
+      padding: 10px 0;
+      display: block;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown a {
+      text-decoration: none;
+      color: #ffc600;
+    }
+
+    a.button {
+      background: black;
+      display: block;
+      padding: 10px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    /* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
+
+    .button[href*=twitter] {
+      background: #019FE9;
+    }
+
+    .button[href*=facebook] {
+      background: #3B5998;
+    }
+
+    .button[href*=courses] {
+      background: #ffc600;
+    }
+  </style>
+
+  <script>
+    const triggers = document.querySelectorAll('.cool > li');
+    const backgorund = document.querySelector('.dropdownBackground');
+    const nav = document.querySelector('.top');
+
+    function handleEnter() {
+      this.classList.add('trigger-enter');
+      // 如果使用的是function() {} 的話this是會帶到window
+      // 但使用arrow function就會變成是呼叫者（li)
+      setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
+      backgorund.classList.add('open');
+
+      const dropdown = this.querySelector('.dropdown');
+      const dropdownCoords = dropdown.getBoundingClientRect();
+      const navCoords = nav.getBoundingClientRect();
+
+      const coords = {
+        height: dropdownCoords.height,
+        width: dropdownCoords.width,
+        top: dropdownCoords.top - navCoords.top,
+        left: dropdownCoords.left - navCoords.left,
+      }
+
+      backgorund.style.setProperty('height', `${coords.height}px`);
+      backgorund.style.setProperty('width', `${coords.width}px`);
+      backgorund.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+      //console.log(dropdownCoords);
+    }
+
+    function handleLeave() {
+      this.classList.remove('trigger-enter', 'trigger-enter-active');
+      backgorund.classList.remove('open');
+    }
+
+    triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter));
+    triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
+  </script>
+
+</body>
+
+</html>
