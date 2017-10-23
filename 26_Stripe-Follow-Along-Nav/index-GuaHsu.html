@@ -67,7 +67,6 @@
       <a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a>
     </span>
   </div>
-  <h2>Cool</h2>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -140,6 +139,7 @@
     }
 
     nav {
+      top: 100px;
       position: relative;
       perspective: 600px;
     }
@@ -194,8 +194,6 @@
     .trigger-enter-active .dropdown {
       opacity: 1;
     }
-
-
 
     .dropdownBackground {
       width: 100px;
@@ -301,11 +299,12 @@
    {
       height: dropdownCoords.height,
       width: dropdownCoords.width,
-      // 要減去nav是為了避免
-      top: dropdownCoords.top,// - navCoords.top,
-      left: dropdownCoords.left,// - navCoords.left
+      // 要減去nav的定位，避免上方區塊增加時造成的錯位
+      top: dropdownCoords.top - navCoords.top,
+      left: dropdownCoords.left - navCoords.left
     };
 
+    // 設定白色滑動背景的定位與大小
     background.style.setProperty('width', `${coords.width}px`);
     background.style.setProperty('height', `${coords.height}px`);
     background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
