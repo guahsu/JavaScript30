@@ -45,7 +45,7 @@
     // 加上抓取效果
     slider.classList.add('active');
     startX = e.pageX - slider.offsetLeft;
-    console.log(startX);
+    scrollLeft = slider.scrollLeft; 
   });
 
   slider.addEventListener('mouseleave', () => {
@@ -58,11 +58,12 @@
     slider.classList.remove('active');
   });
 
-  slider.addEventListener('mousemove', () => {
+  slider.addEventListener('mousemove', (e) => {
     if(!isDown) return; // 若狀態非按下，不啟用
-    console.log(isDown);
-    console.count('Do work!');
-    console.log(startX);
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = x - startX;
+    slider.scrollLeft = scrollLeft - walk;
 
   });
 
