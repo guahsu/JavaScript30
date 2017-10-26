@@ -26,10 +26,11 @@
     ga('send', 'pageview');
   </script>
   <title>JavaScript30 - 27 - Click and Drag | Gua's Note</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bod">
-  
+
   <style>
     body {
       margin-top: 48px;
@@ -96,41 +97,52 @@
     <div class="item item25">25</div>
   </div>
 
-<script>
-  const slider = document.querySelector('.items');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  <script>
+    const slider = document.querySelector('.items');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    // 加上抓取效果
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft; 
-  });
+    /** 滑鼠按鍵按下 **/
+    slider.addEventListener('mousedown', (e) => {
+      // 給予按下的flag
+      isDown = true;
+      // 加上抓取效果樣式
+      slider.classList.add('active');
+      // 設定移動的初始值為目前頁面距離-當前item左邊距
+      startX = e.pageX - slider.offsetLeft;
+      // 設定目前捲軸的左距
+      scrollLeft = slider.scrollLeft;
+    });
 
-  slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
+    /** 滑鼠滑出範圍**/
+    slider.addEventListener('mouseleave', () => {
+      // 將按下的flag與樣式移除
+      isDown = false;
+      slider.classList.remove('active');
+    });
 
-  slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
+    /** 滑鼠按鍵放開 **/
+    slider.addEventListener('mouseup', () => {
+      // 將按下的flag與樣式移除
+      isDown = false;
+      slider.classList.remove('active');
+    });
 
-  slider.addEventListener('mousemove', (e) => {
-    if(!isDown) return; // 若狀態非按下，不啟用
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = x - startX;
-    slider.scrollLeft = scrollLeft - walk;
+    /** 滑鼠移動 **/
+    slider.addEventListener('mousemove', (e) => {
+      // 若移動時的狀態非按下，不作動
+      if (!isDown) return;
+      // 避免觸發其他預設事件（按下且移動預設是選取範圍）
+      e.preventDefault();
+      // 設定X（當前定位）為目前頁面距離-當前item左邊距
+      const x = e.pageX - slider.offsetLeft;
+      // 設定移動距離為 X-初始值
+      const walk = x - startX;
+      // 設定水平捲軸的偏移量
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+</body>
 
-  });
-
-
-</script>
-
-  </body>
 </html>

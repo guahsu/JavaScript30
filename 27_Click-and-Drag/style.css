@@ -46,6 +46,7 @@ body {
 
 .item {
   width:200px;
+  /* 利用calc來計算高度-40px */
   height: calc(100% - 40px);
   display: inline-flex;
   align-items: center;
@@ -66,5 +67,6 @@ body {
 .item:nth-child(9n+8) { background: darkslateblue;}
 .item:nth-child(9n+9) { background: rebeccapurple;}
 
+/* 用scaleX與rotateY搭配使移動時有3D效果 */
 .item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
 .item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
