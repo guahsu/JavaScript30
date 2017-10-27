@@ -11,7 +11,7 @@
 這次用相同的原理來把效果製作成選單展開的形式。
 
 ## **步驟**
-### step1 取得頁面元素與建立基本事件框架
+### Step1. 取得頁面元素與建立基本事件框架
 取得頁面元素並分析此次效果僅有兩個事件`mouseenter`與`mouseleave`，  
 確定好知道目前要做的範圍，就先把`function`框建立好。
 ```javascript
@@ -33,7 +33,7 @@ triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
 triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave));
 ```
 
-### step2 撰寫移入事件
+### Step2. 撰寫移入事件
 編寫當滑鼠移入時被觸發的事件，備註如下：
 ```javascript
 // 滑鼠移入事件
@@ -69,7 +69,7 @@ function handleEnter() {
 }
   ```
 
-### step3 撰寫移出事件
+### Step3. 撰寫移出事件
 簡單的移除被加上的class：
 ```javascript
 function handleLeave() {

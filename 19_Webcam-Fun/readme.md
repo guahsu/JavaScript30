@@ -6,14 +6,14 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-19-Webcam-Fun)
 
 ## **步驟**
-### step1 啟動Local Server
+### Step1. 啟動Local Server
 這個練習需要使用到local server，  
 如果你已經有一個可在本機run起來的server可以直接使用，  
 或在這層資料夾底下運行`npm install`來安裝`browser-sync`，  
 安裝完成後可以透過指令`npm start`來啟動localserver(預設port3000)，  
 >npm指令需要下載node.js來使用
 
-### step2 取得影像
+### Step2. 取得影像
 透過`navigator.mediaDevices.getUserMedia`來取得視訊影像
 ```javascript
 function getVideo() {
@@ -36,7 +36,7 @@ function getVideo() {
 ```
 >參閱：[MDN-MediaDevices.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
 
-### step3 取得視訊資料並輸出在cavas區塊中
+### Step3. 取得視訊資料並輸出在cavas區塊中
 ```javascript
 function paintToCanavas() {
   // 設置寬高
@@ -53,7 +53,7 @@ function paintToCanavas() {
 ```
 >參閱：[MDN-CanvasRenderingContext2D.drawImage()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
 
-### step4 製作拍照功能！
+### Step4. 製作拍照功能！
 ```javascript
 function takePhoto() {
   // 拍照的音效->把音效切到第0秒並播放
@@ -76,8 +76,8 @@ function takePhoto() {
 >參閱：[MDN-HTMLCanvasElement.toDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL)
 >參閱：[MDN-Node.insert Before()](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore)
 
-### step5 濾鏡效果（紅色）
-再回到step3的`paintToCanavas()`中新增：
+### Step5. 濾鏡效果（紅色）
+再回到Step3的`paintToCanavas()`中新增：
 ```javascript
 function paintToCanavas() {
   // ...略
@@ -110,6 +110,6 @@ function redEffect(pixels) {
 
 ### 其他
 另外還有色彩分離與綠幕的濾鏡效果，  
-基本上程式操作邏輯同step5的紅色濾鏡效果，  
+基本上程式操作邏輯同Step5的紅色濾鏡效果，  
 不過色彩的偏移設定我沒什麼顏色概念可以做說明..  
 所以只能用紅色濾鏡作為說明><..

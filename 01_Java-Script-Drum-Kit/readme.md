@@ -10,18 +10,18 @@
 [[DEMO]](https://guahsu.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html)  
 
 ## **步驟**
-#### step1.新增keydown listener
+#### Step1. 新增keydown listener
 利用`window.addEventListener('keydown', playSound);`來監聽鍵盤動作。  
-#### step2.建立function`playSound`
+#### Step2. 建立function`playSound`
 1. 利用傳入的e.keyCode來取得對應的`audio`標籤及該按鍵的`div`標籤
 2. 判斷傳入的e.keyCode是否有對應的`audio`標籤，若無則退出
 3. 使對應的`div`加上`playing`樣式，產生對應的典及特效
 4. 使對應的`audio`播放時間為0
 5. 播放對應的音檔
-#### step3.新增transitionend listener
+#### Step3. 新增transitionend listener
 1. 偵測所有包含`className='key'`的元件
 2. 當該元件觸發特效並結束時(`transitionend`)，呼叫`removeTransition`
-#### step4. 建立function`removeTransition`
+#### Step4.  建立function`removeTransition`
 1. 判斷傳入的propretyName是否為transform，若否則退出
 2. 若為transform，則移除`playing`樣式
 

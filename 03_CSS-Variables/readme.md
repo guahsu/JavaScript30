@@ -10,9 +10,9 @@
 [[DEMO]](https://guahsu.github.io/JavaScript30/03_CSS-Variables/index-GuaHsu.html)  
 
 ## **步驟**
-#### step1
+#### Step1
 利用CSS variable來定義CSS的變數(有點像sass的感覺)
-#### step2
+#### Step2
 利用addEventLinstener來綁HTML的控制桿，  
 並更新值到CSS變數中來達到即時調整的效果。
 

@@ -11,12 +11,12 @@
 [[探索版DEMO]](https://guahsu.io/JavaScript30/10_Hold-Shift-and-Check-Checkboxes/index-GuaHsu.html) 
 
 ## **步驟**
-### step1 基本設定
+### Step1. 基本設定
 用`querySelectorAll('.inbox input[type="checkbox"]`來把HTML中的checkbox選起來，  
 並設置一個變數`let lastChecked;`作為稍後勾選位置的紀錄使用。
-### step2 觸發設定
+### Step2. 觸發設定
 把所有選取的checkboxes使用`forEach`來加入`addEventListener('click', handelCheck)`。
-### step3 handelCheck
+### Step3. handelCheck
 在這個function裡面，建立了一個區域變數`let inBetween = false`來當作選取區間的標記，  
 並在每次觸發時檢查是否”有按著shift點擊”`if(e.shiftKey && this.checked)`，  
 若有的話則再跑一次`forEach`來透過`inBetween`對每個checkbox進行區間標記，  

@@ -9,15 +9,15 @@
 [[DEMO]](https://guahsu.io/JavaScript30/06_Type-Ahead/index-GuaHsu.html) 
  
 ## **步驟**
-#### step1
+#### Step1
 預設已經有建立了一個城市的.json清單，  
 先建立一個空的陣列`cities`並透過fetch來取得json資料存進去。
 
-#### step2
+#### Step2
 建立`function findMatches(wordToMatch, cities)`  
 裡面建立了一個`RegExp`用於match來進行字串比對
 
-#### step3
+#### Step3
 建立`displayMatches()`並用`addEventListener`來監測輸入框的`change`&`keyup`，  
 每次鍵盤輸入時都會觸發`displeyMatches()`來處理比對，  
 將比對結果用map來return 組合的HTML的`<li>`資料，  

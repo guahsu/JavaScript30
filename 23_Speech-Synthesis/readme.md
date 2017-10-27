@@ -12,7 +12,7 @@
 並可透過設定好的控制條來變更語音速率/音準。
 
 ## **步驟**
-### step1 取得頁面元素並設置SpeechSynthesisUtterance
+### Step1. 取得頁面元素並設置SpeechSynthesisUtterance
 ```javascript
 const msg = new SpeechSynthesisUtterance();
 let voices = [];
@@ -24,7 +24,7 @@ const stopButton = document.querySelector('#stop');
 msg.text = document.querySelector('[name="text"]').value
 ```
 
-### step2 設定語音播放語系選單
+### Step2. 設定語音播放語系選單
 ```javascript
 // 取得語系資訊 
 function populateVoices() {
@@ -42,7 +42,7 @@ function populateVoices() {
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 ```
 
-### step3 播放與功能設定
+### Step3. 播放與功能設定
 ```javascript
 // 播放切換
 function toggle(starOver = true) {

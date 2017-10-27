@@ -6,7 +6,7 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-25-Event-Capture-Propagation-Bubbling-and-Once) | [[DEMO]](https://guahsu.io/JavaScript30/25_Event-Capture-Propagation-Bubbling-and-Once/index-GuaHsu.html)
 
 ## **步驟**
-### step1 建立事件模型與基本呼叫
+### Step1. 建立事件模型與基本呼叫
 首先建立三層DIV作為稍後測試使用的模型，
 依序包覆為：紫色>淺橘色>深橘色
 ```html
@@ -31,7 +31,7 @@ function logText(e) {
 divs.forEach(div => div.addEventListener('click', logText));
 ```
 
-### step2 預設的點擊事件
+### Step2. 預設的點擊事件
 當對著畫面中間(深橘色/one)做點擊時，console印出來的是
 ```javascript
 three
@@ -40,7 +40,7 @@ one
 ```  
 會從`click`的位置的最深處開始向外層連動所有的div`click`事件，像是氣泡一樣的從內向外浮出去。
 
-### step3 addEventListener的第三個參數-1:capture
+### Step3. addEventListener的第三個參數-1:capture
 深入檢查，會發現其實`addEventListener`是有第三個參數的：
 ```javascript
 divs.forEach(div => div.addEventListener('click', logText, {
@@ -56,7 +56,7 @@ one
 就只有印出one而已，這是因為對當前最外層的容器one去點了，  
 就已經捕捉到目的了，所以他不會再往下找，只會到點擊的最外層目標為止。
 
-### step4 stopPropagation()
+### Step4. stopPropagation()
 但如果想從內層往外層點，而且是依選取層印出對應層級的話，  
 就要在列印的function加上`topPropagation()`來使用：
 ```javascript
@@ -67,7 +67,7 @@ function logText(e) {
 ```
 這會使原本向外延伸的氣泡事件停止。
 
-### step5 addEventListener的第三個參數-2:once
+### Step5. addEventListener的第三個參數-2:once
 而`addEventListener`的第三參數還有一個新屬性`once`，  
 新增一個按鈕的`click`事件來測試：
 ```javascript

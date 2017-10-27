@@ -7,11 +7,11 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-16-Mouse-Move-Shadow/)  
 
 ## **步驟**
-### step1 設定目標區域與基本偏移量
+### Step1. 設定目標區域與基本偏移量
 1. 抓取HTML中的`hero`與`text`做為目標區域
 2. 設定基本偏移基準`walk = 100`
 
-### step2 建立觸發條件與事件
+### Step2. 建立觸發條件與事件
 1. 設定`hero.addEventListener('mousemove', shadow)`
 2. 觸發事件備註：
 ```javascript

@@ -8,7 +8,7 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-22-Follow-Along-Link-Highlighter)
 
 ## **步驟**
-### step1 取得頁面元素
+### Step1. 取得頁面元素
 ```javascript
 // 取得HTML中所有的a元素
 const triggers = document.querySelectorAll('a');
@@ -19,7 +19,7 @@ highlight.classList.add('highlight');
 document.body.append(highlight);
 ```
 
-### step2 撰寫移入狀態
+### Step2. 撰寫移入狀態
 用以下的JS對目標(a連結)定位並設定樣式
 ```javascript
 // 效果

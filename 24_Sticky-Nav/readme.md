@@ -8,7 +8,7 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-24-Sticky-Nav) | [[DEMO]](https://guahsu.io/JavaScript30/24_Sticky-Nav/index-GuaHsu.html)
 
 ## **步驟**
-### step1 取得頁面元素並偵測選單到頂部的高度
+### Step1. 取得頁面元素並偵測選單到頂部的高度
 ```javascript
 // 取得nav元素
 const nav = document.querySelector('#main');
@@ -16,7 +16,7 @@ const nav = document.querySelector('#main');
 let topOfNav = nav.offsetTop;
 ```
 
-### step2 對CSS增加樣式fixed-nav
+### Step2. 對CSS增加樣式fixed-nav
 ```CSS
 /* 當有fixed-nav時，把site-wrap縮放回1，讓整體有放大效果*/
 .fixed-nav .site-wrap {
@@ -33,7 +33,7 @@ let topOfNav = nav.offsetTop;
 }
 ```
 
-### step2 進行網頁捲軸高度偵測，決定是否變更選單樣式
+### Step2. 進行網頁捲軸高度偵測，決定是否變更選單樣式
 ```javascript
 function fixNav() {
   // 如果目前捲軸的高度高過於nav的頂部

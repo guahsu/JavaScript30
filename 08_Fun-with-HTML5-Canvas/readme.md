@@ -10,11 +10,11 @@
 [[DEMO]](https://guahsu.github.io/JavaScript30/08_Fun-with-HTML5-Canvas/index-GuaHsu.html) 
 
 ## **步驟**
-### step1
+### Step1
 先在HTML的地方建立一個`<canvas>`的區塊，  
 並設置一個變數ctx作為canvas的操作元素，  
 設定顏色`strokeStyle`、樣式`lineJoin`、`lineCap`、`lineWidth`...
-### step2
+### Step2
 接著設定變數各種待會會應用到的變數
  
 ````javascript
@@ -32,7 +32,7 @@ let lastY = 0;
 let hue = 0; // 色相值，在hsl中使用
 let direction = true; // 判斷粗細增減用
 ````
-### step3
+### Step3
 寫function來執行畫圖！
 ````javascript
 function draw(e) {
@@ -67,7 +67,7 @@ function draw(e) {
     }      
 }
 ````
-### step3
+### Step4
 接著設定滑鼠對應的`addEventListener`效果
 ````javascript
 // 當滑鼠按下時，將目前滑鼠的位置設定為變數中的X、Y並讓isDrawing為true

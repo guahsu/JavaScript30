@@ -7,7 +7,7 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-17-Sort-Without-Articles/) 
 
 ## **步驟**
-### step1 建立篩選的function
+### Step1. 建立篩選的function
 使用`replace`搭配正規表示式來將包含了`a, the, an`開頭的文字替換為空白。
 ```javascript
 function strip(bandName) {
@@ -15,7 +15,7 @@ function strip(bandName) {
 }
 ```
 
-### step2 對目標陣列進行篩選與排序
+### Step2. 對目標陣列進行篩選與排序
 這裡將原本的寫法與簡寫放在一起，可以發現整體簡潔不少。
 ```javascript
 //原本的寫法
@@ -30,7 +30,7 @@ const sortedBands = bands.sort(function(a, b){
 const sortedBands = bands.sort((a, b) => (strip(a) > strip(b)) ? 1 : -1);
 ```
 
-### step3 把排序完的渲染到HTML中
+### Step3. 把排序完的渲染到HTML中
 使用`map`與`join`來組成`<li>`元素放置
 ```javascript
 document.querySelector('#bands').innerHTML = 

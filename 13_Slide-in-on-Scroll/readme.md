@@ -11,13 +11,13 @@
 [[DEMO]](https://guahsu.io/JavaScript30/13_Slide-in-on-Scroll/index-GuaHsu.html)
 
 ## **步驟**
-### step1 基礎設定
+### Step1. 基礎設定
 作者已經在所有的圖片中加入了待會會用到的class : 
 1. align-right / align-left : 滑入效果用（左/右）
 2. slide-in : JavaScript抓取用
 並已經將相關的動畫滑入效果寫好。
 
-### step2 建立觸發條件,並監聽滾動事件
+### Step2. 建立觸發條件,並監聽滾動事件
 目的是使滾動視窗到定點時顯示效果，  
 所以要監聽的是整個視窗，用`window`，事件選用`scroll`，  
 但是如果單純使用`scroll`來操作的話，每次的畫面滾動都會有大量事件被觸發，  
@@ -40,7 +40,7 @@ function debounce(func, wait = 20, immediate = true) {
 ````
 所以監聽事件就會寫成`window.addEventListener('scroll', debounce(checkSlide));`。  
 
-### step3 設定觸發後的事件內容
+### Step3. 設定觸發後的事件內容
 在一開始先取得所有`.slide-in`的圖片元素，使用`querySelectorAll`，
 ````javascript
 const sliderImages = document.querySelectorAll('.slide-in');

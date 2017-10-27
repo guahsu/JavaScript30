@@ -12,11 +12,11 @@
 [[DEMO]](https://guahsu.io/JavaScript30/12_Key-Sequence-Detection/index-GuaHsu.html)
 
 ## **步驟**
-### step1 設定目標
+### Step1. 設定目標
 在這個效果中，目的是在瀏覽器內容中透過鍵盤觸發對應的“密碼”後執行，  
 所以需要設定一個陣列來保存輸入值，並設定好設定的密碼(我設定為guahsu)，  
 接著針對`window`對這個瀏覽器視窗來做`addEventListener('keyup'..)`監聽鍵盤動作。
-### step2 執行
+### Step2. 執行
 當觸發`keyup`時利用陣列的`push()`來塞入鍵盤動作所觸發的輸入內容`e.key`，  
 接著用陣列的`splice()`來控制密碼陣列，使其不超出密碼長度且堆疊替換掉第一個元素，  
 最後透過陣列的`join()`及字串的`includes()`來驗證輸入內容是否與設定密碼相同。  

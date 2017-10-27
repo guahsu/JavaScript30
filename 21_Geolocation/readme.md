@@ -6,19 +6,19 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-21-Geolocation)
 
 ## **步驟**
-### step1 啟動Local Server
+### Step1. 啟動Local Server
 這個練習需要使用到local server，  
 如果你已經有一個可在本機run起來的server可以直接使用，  
 或在這層資料夾底下運行`npm install`來安裝`browser-sync`，  
 安裝完成後可以透過指令`npm start`來啟動localserver(預設port3000)，  
 >npm指令需要下載node.js來使用
 
-### step2 測試
+### Step2. 測試
 由於這個練習是需要取得定位資訊，  
 所以可以透過手機瀏覽器利用`npm start`啟動server後的內網ip來連線，  
 或是使用Mac的`Xcode`開發工具來模擬移動中的裝置(影片教學是使用後者)。
 
-### step3 撰寫程式
+### Step3. 撰寫程式
 ```javascript
 // 取得HTML中的元素
 const arrow = document.querySelector('.arrow');

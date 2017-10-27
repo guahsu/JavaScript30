@@ -10,25 +10,25 @@
 [[DEMO]](https://guahsu.io/JavaScript30//05_Flex-Panel-Gallery/index-GuaHsu.html)  
 
 ## **步驟**
-#### step1
+#### Step1
 由於整體HTML的tag是由1個`panels`包覆5個`panel`，  
 為了使其設定為flex，先在外層容器`panels`加上`display: flex`  
 接著為每個`panel`加上`flex: 1`來使各子元件最大占比為1  
 也就會變成同容器中的5個元件都設1，那就是每個元件最大占比為20%。  
 (因對flex並不熟悉，我是用占比來理解，若有錯請在指正..感謝@@)
 
-#### step2
+#### Step2
 在為`panel`加上`justify-content: center`使其水平置中，  
 並在加上了`display: flex`及`flex-direction: column`，  
 再加上一層`display: flex`可以使`panel`底下的元件也變成flex控管
 
-#### step3
+#### Step3
 對panel底下的`first-child`及`last-child`做位移效果，  
 使其能在預設狀態於可視範圍外，並設計`open-active`  
 當觸發時，配合`transition`產生移回原位的動畫，  
 也在`.panel.open`中新增了`flex: 5`使其觸發時會有展開的動畫。 
 
-#### step4
+#### Step4
 編寫JS先取得所有panel的節點，  
 接著設計toggle function使執行的物件藉由`.classList.toggle`來新增/移除動畫class  
 並透過addEventListener來監測當`click`&`transitionend`時觸發toggle function。  

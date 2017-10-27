@@ -11,11 +11,11 @@
 [[DEMO]](https://guahsu.io/JavaScript30/15_LocalStorage/index-GuaHsu.html)
 
 ## **步驟**
-### step1 基礎設定
+### Step1. 基礎設定
 作者已經設定好這篇練習用的html與css，  
 主要的架構由一個`div`包著`ul`與`from`，  
 類似Todo-List的清單(ul)與輸入欄位(form)。
-### step2 撰寫輸入欄位新增功能
+### Step2. 撰寫輸入欄位新增功能
 首先取得`form`元素及`ul`，並宣告一個空陣列來存放新增資料。
 ````javascript
   const addItems = document.querySelector('.add-items');
@@ -45,7 +45,7 @@
 這樣每次submit後`items`就會新增在輸入欄位中的物件了！  
 可透過console.log來查看新增的物件狀態。
 
-### step3 顯示新增的清單
+### Step3. 顯示新增的清單
 在上一個步驟中所做的只有存於宣告的陣列中，  
 並沒有抓出來顯示在HTML中，所以要寫一個function來顯示：
 ````javascript
@@ -65,7 +65,7 @@
 然後要記得回到`addItem`中把`platesList`放在`items.push(item)`後面，
 讓每次輸入送出後都會執行這個function重新列出組成的物件字串。
 
-### step4 加入LocalStorage
+### Step4. 加入LocalStorage
 當完成了新增功能後，就要進入主軸`LocalStorage`了，  
 這可以讓瀏覽器存取你設定在這個頁面的資訊，  
 所以首先在`addItem`中修改加入這段：
@@ -88,7 +88,7 @@ function addItem(e) {
 ````
 讓頁面在重整後，先判斷localStorage中是否有存放`items`物件，沒有的話則給空陣列。
 
-### step5 儲存checkbox狀態
+### Step5. 儲存checkbox狀態
 這裡要新增一個function`toggleDone`並監聽`itemsList`的click動作，  
 ````javascript
   function toggleDone(e) {
@@ -108,7 +108,7 @@ function addItem(e) {
   itemsList.addEventListener('click', toggleDone);
 ````
 
-### step6 - 增加刪除功能
+### Step6. 增加刪除功能
 到目前為止只有新增跟儲存的功能，來增加一個刪除按鈕吧，  
 首先在`populateList`中字串組成中改成這樣：
 ````javascript
@@ -147,7 +147,7 @@ function addItem(e) {
   }
   ````
 
-### step7 - 新增全選/全取消功能
+### Step7. 新增全選/全取消功能
 在HTML的`form`元素後方加上這段HTML CODE:
 ````html
 <style>
@@ -187,7 +187,7 @@ function addItem(e) {
 ````
 
 ## 探索
-本次探索就是`step6-刪除`及`step7 - 新增全選/全取消功能`功能擴充，  
+本次探索就是`Step6的刪除`及`Step7的新增全選/全取消功能`功能擴充，  
 基本上所有語法都是之前有使用及寫下過的，  
 LocalStorage很實用，之前做的兩個小練習也都有使用上：
 1. [JavaScript練習-臺北市旅遊景點](http://demo.guastudio.com/jsTravelMap/)

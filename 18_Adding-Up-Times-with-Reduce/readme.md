@@ -7,7 +7,7 @@
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-18-Adding-Up-Times-with-Reduce/)
 
 ## **步驟**
-### step1 取得全部的時間值
+### Step1. 取得全部的時間值
 在HTML中，時間資訊放在`<li data-time>`中，  
 所以透過`querySelectorAll`來取得，  
 因為接著會使用`map`及`reduce`操作，  
@@ -17,7 +17,7 @@
 const timeNodes = Array.from(document.querySelectorAll('[data-time'));
 ```
 
-### step2 將取回的資料轉為秒數並加總
+### Step2. 將取回的資料轉為秒數並加總
 ```javascript
 const seconds = timeNodes
       // 取出每個元素中的data-time資料
@@ -33,7 +33,7 @@ const seconds = timeNodes
       .reduce((total, seconds) => total + seconds);
 ```
 
-### step3 把總秒數轉為時分秒格式
+### Step3. 把總秒數轉為時分秒格式
 ```javascript
 // 利用取得的總秒數來進行總共時分秒的計算
 // 使用Math.floor取整數，再利用%來操作餘數
@@ -44,7 +44,7 @@ const mins = Math.floor(secondsLeft / 60);
 secondsLeft = secondsLeft % 60;
 ```
 
-### step4 印出結果
+### Step4. 印出結果
 ```javascript
 console.log(`${hours}:${mins}:${secondsLeft}`);
 ```

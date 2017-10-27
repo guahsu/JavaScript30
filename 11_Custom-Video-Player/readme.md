@@ -11,12 +11,12 @@
 [[DEMO]](https://guahsu.io/JavaScript30/11_Custom-Video-Player/index-GuaHsu.html)
 
 ## **步驟**
-### step1 基本設定
+### Step1. 基本設定
 作者已經有將基礎的css及html tag設定好，僅需針對各項目的功能開始進行js撰寫即可，  
 但這邊我有將背景色調調整，並把對應icon改用font-awesome來顯示（原本是文字符號）。
 >由於寫到最後已經很多寫法跟原作者的方法不太一樣，所以接著各功能會再稍微備註為何這麼寫。
 
-### step2 播放/暫停按鈕
+### Step2. 播放/暫停按鈕
 為了在整個播放器範圍及點擊播放按鈕時能播放/暫停，  
 先針對這兩個元素做`addEventListener`，  
 並在`togglePlay()`中使影片產生對應動作＆更換圖示，
@@ -35,7 +35,7 @@ toggle.addEventListener('click', togglePlay);
 ````
 >原本是將圖標更換＆影片動作分開寫，我改成寫一起。
 
-### step3 音量/速率操作
+### Step3. 音量/速率操作
 在HTML中已經定義好對應的`input-range`標籤，
 在這裡只需要做監聽並取屬性值來操作就好了！
 ````html
@@ -56,7 +56,7 @@ ranges.forEach(range => {
 })
 ````
 
-### step4 快進/快退操作
+### Step4. 快進/快退操作
 一樣也在HTML中的`input`定義好對應的秒數了，只須取出使用。
 ````html
 <button data-skip="-10" class="player__button skip_left"><i class="icon-backward"></i></button>
@@ -64,7 +64,7 @@ ranges.forEach(range => {
 ````
 在javascript的部分，原本的寫法只有點擊後觸發，  
 因為我有加上鍵盤觸發的動作，所以將`skip`加上了一個參數`direction`來判斷，
-而`skipButtons`也跟step3的`ranges`一樣用forEach來加上監聽效果，
+而`skipButtons`也跟Step3的`ranges`一樣用forEach來加上監聽效果，
 快進快退的作法是取出input中設定的`data-skip`後透過`currentTime`來調整影片時間。
 ````javascript
 function skip(direction) {
@@ -82,7 +82,7 @@ skipButtons.forEach(button => {
   button.addEventListener('click', skip);
 })
 ````
-### step5 進度條顯示
+### Step5. 進度條顯示
 使用video的`currenTime`與`duration`計算出進度％數，  
 再透過CSS改變進度條的色塊％數，值得一提的是作者有說到兩個監聽參數：
 `timeupdate`與`progress`都可以做為影片時間變動時的觸發條件，  
@@ -97,7 +97,7 @@ function handleProgress() {
 video.addEventListener('progress', handleProgress);
 ````
 
-### step6 進度條操作
+### Step6. 進度條操作
 在影片的進度條上，做點擊切換段落，或著是按著滑動片段，
 分解動作會有：`點擊`、`按住並移動`這兩種觸發條件，  
 為了要讓function能同時判斷兩種狀態，必須要將其中一個條件設flag，  
@@ -123,7 +123,7 @@ progressEvents.forEach(progressEvent => {
 })
 ````
 
-### step7 全螢幕
+### Step7. 全螢幕
 作者最後有提到的小功能，他說留給我們自己去研究。  
 首先在HTML中加上對應的功能按鈕與圖標(就是這個放大圖標讓我去用font-aswsome的XD)
 ````html
@@ -147,7 +147,7 @@ function fullScreen() {
 fullScreenBtn.addEventListener('click', fullScreen);
 ````
 
-### step8 鍵盤動作偵測
+### Step8. 鍵盤動作偵測
 最後加上的功能是鍵盤對應操作，  
 加入了空白對應播放/暫停、鍵盤左右鍵對應快進/快退，
 空白鍵加上了`preventDefalut`是防止預設空白會跳到最底下的功能。
@@ -189,18 +189,18 @@ document.addEventListener('keydown', eventKeydown);
 所以使用中括號[]包起來的會自動變成字串，可以避免掉這樣的問題。
 
 ### **HTMLElement.dataset**
-在step4中使用到的，使用`dataset`可以取得`htmlTag`中的`data-*`屬性！
+在Step4中使用到的，使用`dataset`可以取得`htmlTag`中的`data-*`屬性！
 >參閱：[MDN-](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
 
 ### **Event.preventDefault()**
-在step8中使用到的，這個方法是將取消事件（如果事件可取消），  
+在Step8中使用到的，這個方法是將取消事件（如果事件可取消），  
 這次使用的場景是於網頁瀏覽器中按下空白，預設會將網頁捲到底部，  
 但我希望只要啟動我的播放/暫停功能就好不要捲動，就可以使用。
 >參閱：[MDN-Event.preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
 [MDN-Event.preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
 
 ## 探索
-本次的探索滿多，都已經寫在step中了，  
+本次的探索滿多，都已經寫在Step中了，  
 修改了播放器樣式及部分色調調整，對重複的監聽與變數整理，  
 加入了全螢幕效果以及鍵盤操作功能。
 

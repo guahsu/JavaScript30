@@ -9,11 +9,11 @@
 [[DEMO]](https://guahsu.io/JavaScript30/02_JS-and-CSS-Clock/index-GuaHsu.html)  
 
 ## **步驟**
-#### step1.製作時針、分針、秒針  
+#### Step1. 製作時針、分針、秒針  
 利用class`hand`樣式來表現出時分秒針的樣式  
-#### step2.設定定時器
+#### Step2. 設定定時器
 利用` setInterval(setDate, 1000);`每秒取得當前時間
-#### step3.利用當前時間來取得對應角度
+#### Step3. 利用當前時間來取得對應角度
 將每秒取得的時間在`setData`裡面取出，並計算出對應角度  
 再透過`element.style.tranform`來變更CSS效果，產生位移的感覺。
 
