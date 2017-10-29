@@ -18,9 +18,10 @@
 並在每個練習加上index-GuaHsu.html來放置我所完成的版本。
 
 ## 其他
-我會放在自己的[部落格(https://guahsu.io) | [筆記](https://guahsu.io)一份，並在GitHub上也留存一份。  
+我會放在自己的[部落格](https://guahsu.io)一份，並在GitHub上也留存一份。  
 若有任何錯誤或指教請在告知，謝謝:)!
 
+##
 | No | 主題 | 筆記 | DEMO |
 | --- | --- | --- | --- |
 | 01 | JavaScript Drum Kit | [筆記](https://guahsu.io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/) | [DEMO](https://guahsu.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html) |
