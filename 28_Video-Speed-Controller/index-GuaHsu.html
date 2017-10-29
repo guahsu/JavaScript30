@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="背不起來的就寫下來吧。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gua&#39;s Note">
+  <meta property="og:url" content="https://guahsu.io/">
+  <meta property="og:site_name" content="Gua&#39;s Note">
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-84594235-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <title>JavaScript30 - 28 - Video Speed Controller | Gua's Note</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bod">
+
+  <style>
+    body {
+      margin-top: 48px;
+    }
+
+    .GuaHsu-header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+      color: #7ff3cb;
+      font-size: 20px;
+      font-weight: 100;
+      z-index: 999;
+    }
+
+    .GuaHsu-header span {
+      margin: 0 5px;
+    }
+
+    .GuaHsu-header a {
+      text-decoration: none;
+      color: unset;
+    }
+  </style>
+  <div class="GuaHsu-header">
+    <span>
+      <a href="https://guahsu.io/categories/JavaScript30/" target="_blank">JavaScript30 心得</a>
+    </span>
+    <span>|</span>
+    <span>
+      <a href="https://github.com/guahsu/JavaScript30" target="_blank">GitHub</a>
+    </span>
+  </div>
+
+  <div class="wrapper">
+    <video class="flex" width="765" height="430" src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164" loop controls></video>
+    <div class="speed">
+      <div class="speed-bar">1×</div>
+    </div>
+  </div>
+
+<script>
+  const speed = document.querySelector('.speed');
+  const bar = speed.querySelector('.speed-bar');
+  const video = document.querySelector('.flex');
+
+  /** 滑鼠移動事件 **/
+  function handleMove (e) {
+    // 取得觸發點位置（滑鼠位於整頁頂端的Y軸定位-speed框到整頁頂端的距離）
+    const y = e.pageY - this.offsetTop;
+    // 設定百分比(y / speed框的高度)
+    const percent = y / this.offsetHeight;
+    const min = 0.4;
+    const max = 4;
+    // 用Math.round來計算取得四捨五入的百分比值
+    const height = Math.round(percent * 100) + '%';
+    // 取得播放速率(0.4一跳，最多4倍速)
+    const playbackRate = percent * (max - min) + min;
+    // 調整speed-bar的樣式高度
+    bar.style.height = height;
+    // 用toFixed(2)來設定最多取得小數點後兩位，顯示於speed-bar上
+    bar.textContent = playbackRate.toFixed(2) + 'x';
+    // 控制影片的速率
+    video.playbackRate = playbackRate;
+  }
+
+  /** 滑鼠移動 **/
+  speed.addEventListener('mousemove', handleMove);
+
+</script>
+</body>
+</html>
