@@ -3,10 +3,7 @@ const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
 let countdown; // 計時器
 
-/** 
- * 計時器 
- * seconds：秒數
-*/
+/** 計時器 **/
 function timer(seconds) {
   // 新的計時器被啟動時，先把原本的setInterval刪除
   clearInterval(countdown);
