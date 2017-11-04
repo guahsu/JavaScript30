@@ -1,7 +1,7 @@
 const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
-let countdown; // 計時器
+let countdown; // 外層變數，供計時器主體使用
 
 /** 計時器 **/
 function timer(seconds) {
