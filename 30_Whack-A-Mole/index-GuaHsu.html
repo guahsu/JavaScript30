@@ -71,8 +71,12 @@
   </div>
 
 
-  <h1>Whack-a-mole! <span class="score">0</span></h1>
-  <button onClick="startGame()">Start!</button>
+  <h1>Whack-a-mole!
+    <span class="score">0</span>
+  </h1>
+  <div class="controllArea">
+    <div class="startBtn" onClick="startGame()">[Start!]</div>
+  </div>
 
   <div class="game">
     <div class="hole hole1">
@@ -95,11 +99,62 @@
     </div>
   </div>
 
-<script>
-  const holes = document.querySelectorAll('.hole');
-  const scoreBoard = document.querySelector('.score');
-  const moles = document.querySelectorAll('.mole');
+  <script>
+    const holes = document.querySelectorAll('.hole');
+    const scoreBoard = document.querySelector('.score');
+    const moles = document.querySelectorAll('.mole');
+    let lastHole;
+    let timeUP = false;
+    let score = 0;
 
-</script>
+    // 
+    function randomTime(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
+    }
+
+    function randomHole(holes) {
+      const idx = Math.floor(Math.random() * holes.length);
+      const hole = holes[idx];
+      // 避免骰到相同的
+      if (hole === lastHole) {
+        return randomHole(holes);
+      }
+      lastHole = hole;
+      return hole;
+    }
+
+    function peep() {
+      const time = randomTime(300, 1000);
+      const hole = randomHole(holes);
+      // 移除已槌標記
+      hole.querySelector('.mole').classList.remove('bonked');
+      hole.classList.add('up');
+      setTimeout(() => {
+        hole.classList.remove('up');
+        if (!timeUP) peep();
+      }, time)
+    }
+
+    function startGame() {
+      scoreBoard.textContent = 0;
+      timeUP = false;
+      score = 0;
+      peep();
+      setTimeout(() => timeUP = true, 10000);
+    }
+
+    function bonk(e) {
+      // isTrusted防止腳本操作，class有bonked代表已被搥過
+      if(!e.isTrusted || this.classList.contains('bonked')) return;
+      this.classList.add('bonked');
+      this.classList.remove('up');
+      score++;
+      scoreBoard.textContent = score;
+    }
+
+    moles.forEach(mole => mole.addEventListener('click', bonk));
+    //istrusted
+  </script>
 </body>
+
 </html>

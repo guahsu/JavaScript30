@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
-  font-size: 10px;
   background: #ffc600;
+  font-size: 10px;
 }
 
 *, *:before, *:after {
@@ -9,58 +9,65 @@ html {
 }
 
 body {
-  padding: 0;
   margin:0;
+  padding: 0;
   font-family: 'Amatic SC', cursive;
 }
 
 h1 {
+  margin-bottom: 0;
   text-align: center;
   font-size: 10rem;
   line-height:1;
-  margin-bottom: 0;
 }
-
+.controllArea {
+  text-align: center;
+}
+.startBtn {
+  font-size: 50px;
+  font-weight: 600;
+  padding: 10px 20px;
+}
 .score {
-  background:rgba(255,255,255,0.2);
   padding:0 3rem;
-  line-height:1;
   border-radius:1rem;
+  background:rgba(255,255,255,0.2);
+  line-height:1;
 }
 
 .game {
-  width:600px;
-  height:400px;
   display:flex;
   flex-wrap:wrap;
   margin:0 auto;
+  width:600px;
+  height:400px;
 }
 
 .hole {
-  flex: 1 0 33.33%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  flex: 1 0 33.33%;
 }
 
 .hole:after {
+  position: absolute;
+  bottom:-30px;
+  z-index: 2;
   display: block;
+  width: 100%;
+  height:70px;
   background: url(dirt.svg) bottom center no-repeat;
   background-size:contain;
   content:'';
-  width: 100%;
-  height:70px;
-  position: absolute;
-  z-index: 2;
-  bottom:-30px;
 }
 
 .mole {
-  background:url('mole.svg') bottom center no-repeat;
-  background-size:60%;
   position: absolute;
   top: 100%;
   width: 100%;
   height: 100%;
+  background:url('mole.svg') bottom center no-repeat;
+  background-size:60%;
   transition:all 0.4s;
 }
 
