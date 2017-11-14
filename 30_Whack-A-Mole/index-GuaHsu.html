@@ -100,60 +100,81 @@
   </div>
 
   <script>
+    /**  取得頁面元素 */
     const holes = document.querySelectorAll('.hole');
     const scoreBoard = document.querySelector('.score');
     const moles = document.querySelectorAll('.mole');
-    let lastHole;
-    let timeUP = false;
-    let score = 0;
+    
+    /** 預設變數設定 */
+    let lastHole; // 最後一次出現的地鼠洞
+    let timeUP = false; // 遊戲時間是否結束戳記
+    let score = 0; // 分數
 
-    // 
+    /** 地鼠出現後存在時間，傳入最小&最大值，回傳一個區間亂數 */
     function randomTime(min, max) {
       return Math.round(Math.random() * (max - min) + min);
     }
 
+    /** 地鼠出現的洞 */
     function randomHole(holes) {
+      // 取得地鼠洞數量區間內隨機一個洞
       const idx = Math.floor(Math.random() * holes.length);
       const hole = holes[idx];
       // 避免骰到相同的
       if (hole === lastHole) {
         return randomHole(holes);
       }
+      // 紀錄最後一個出現的地鼠洞
       lastHole = hole;
       return hole;
     }
 
+    /**  地鼠出現 */
     function peep() {
+      // 取得存在時間
       const time = randomTime(300, 1000);
+      // 取得出現的洞
       const hole = randomHole(holes);
       // 移除已槌標記
       hole.querySelector('.mole').classList.remove('bonked');
+      // 增加出現的動畫class
       hole.classList.add('up');
+      // 設定存在時間到的時候移除出現動畫，且若遊戲時間未結束就繼續跑下一run
       setTimeout(() => {
         hole.classList.remove('up');
         if (!timeUP) peep();
       }, time)
     }
 
-    function startGame() {
-      scoreBoard.textContent = 0;
-      timeUP = false;
-      score = 0;
-      peep();
-      setTimeout(() => timeUP = true, 10000);
-    }
-
+    /** 打地鼠 */
     function bonk(e) {
-      // isTrusted防止腳本操作，class有bonked代表已被搥過
+      // isTrusted防止腳本操作，class有bonked代表已被搥過，若符合上述兩者則不進行
       if(!e.isTrusted || this.classList.contains('bonked')) return;
-      this.classList.add('bonked');
+      // 替被打到的地鼠加上bonked的樣式避免連續點擊得分
+      this.classList.add('bonked'); 
+      // 打到就移除出現的動畫
       this.classList.remove('up');
+      // 加分
       score++;
+      // 更新顯示分數
       scoreBoard.textContent = score;
     }
 
+    /** 開始遊戲 */
+    function startGame() {
+      // 時間重置
+      timeUP = false;
+      // 分數歸零
+      scoreBoard.textContent = 0;
+      score = 0;
+      // 執行地鼠出現函式
+      peep();
+      // 設定十秒後把時間押為結束
+      setTimeout(() => timeUP = true, 10000);
+    }
+
+    // 替每個地鼠加上click事件綁定bonk（打地鼠）
     moles.forEach(mole => mole.addEventListener('click', bonk));
-    //istrusted
   </script>
 </body>
 
