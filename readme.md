@@ -53,4 +53,4 @@
 | 27 | Click and Drag | [筆記](https://guahsu.io/2017/10/JavaScript30-27-Click-and-Drag/) | [DEMO](http://guahsu.io/JavaScript30/27_Click-and-Drag/index-GuaHsu.html) |
 | 28 | Video Speed Controller | [筆記](https://guahsu.io/2017/10/JavaScript30-28-Video-Speed-Controller/) | [DEMO](http://guahsu.io/JavaScript30/28_Video-Speed-Controller/index-GuaHsu.html) |
 | 29 | Countdown Timer | [筆記](https://guahsu.io/2017/11/JavaScript30-29-Countdown-Timer/) | [DEMO](http://guahsu.io/JavaScript30/29_Countdown_Timer/index-GuaHsu.html) |
-| 30 | Whack A Mole  | 筆記 | DEMO |
+| 30 | Whack A Mole  | [筆記](https://guahsu.io/2017/11/JavaScript30-30-Whack-A-Mole/) | [DEMO](http://guahsu.io/JavaScript30/30_Whack-A-Mole/index-GuaHsu.html) |
