@@ -30,6 +30,11 @@ html {
   float:left;
 }
 
+.photoBtn {
+  height: 50px;
+  width: 200px;
+}
+
 .player {
   position: absolute;
   top:20px;
