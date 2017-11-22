@@ -37,7 +37,6 @@ function checkLoad(image) {
   setTimeout(function() {
     if(image.complete) {
       loadEl.style.display = 'none'; 
-      console.log('ok');
     }else{
       loadEl.style.display = 'block'; 
       checkLoad(image)

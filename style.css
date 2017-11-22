@@ -53,8 +53,9 @@ body {
   margin: 10px auto;
   max-width: 80%;
   letter-spacing: 2px;
-  font-size: 16px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
 .courseList {
@@ -166,6 +167,7 @@ body {
 }
 
 .course__no {
+  position: absolute;
   top: 50%;
   left: 50%;
   display: inline-block;
