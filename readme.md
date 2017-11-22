@@ -4,6 +4,9 @@
 >[WES BOS的GitHub](https://github.com/wesbos/JavaScript30)  
 [JavaScript30官網](https://javascript30.com/)
 
+## 課程一覽站（動圖）
+[連結位置：http://guahsu.io/JavaScript30/](http://guahsu.io/JavaScript30/)
+
 ## 目的
 實作範例，並紀錄每個練習的過程。  
 
