@@ -1,8 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  color: #333;
   background-color: #f4f4f4;
+  color: #333;
   font-family: 'Questrial', "微軟正黑體", sans-serif;
 }
 body {
@@ -10,37 +10,38 @@ body {
   border-bottom: 6px solid #555;
 }
 .container {
-  min-width: 500px;
   padding: 30px 0px;
+  min-width: 500px;
   text-align: center;
 }
 
 .head {
-  max-width: 1200px;
   margin: auto;
   margin-bottom: 30px;
+  max-width: 1200px;
 }
 
 .head__btn {
   display: inline-block;
   overflow: hidden;
-  width: 160px;
   margin: 5px 15px;
   padding: 10px 0px;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  text-decoration: none;
-  color: #fafafa;
+  width: 160px;
   outline: 0;
   background-color: #333333;
+  color: #fafafa;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
+
+  user-select: none;
 }
 
 .head__title {
   padding: 10px 30px;
   background-color: #f7df1e;
-  font-family: 'Montserrat';
   font-size: 60px;
+  font-family: 'Montserrat';
 }
 
 .head__info {
@@ -49,8 +50,8 @@ body {
 }
 
 .head__desc {
-  max-width: 80%;
   margin: 10px auto;
+  max-width: 80%;
   letter-spacing: 2px;
   font-size: 16px;
   line-height: 2;
@@ -71,17 +72,17 @@ body {
   position: relative;
   display: inline-block;
   width: 400px;
-  transition: 0.5s;
-  text-align: center;
   background-color: #fafafa;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  text-align: center;
+  transition: 0.5s;
   transition: 0.3s;
   transform: scale(1);
 }
 
 .course:hover {
-  transform: scale(1);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scale(1);
 }
 
 .course:hover .course__ribbon {
@@ -104,25 +105,26 @@ body {
 .course__desc {
   margin: 2px 0px;
   padding: 5px 10px;
-  text-align: left;
   background-color: #fafafa;
+  text-align: left;
   font-size: 15px;
 }
 
 .course__btn {
   display: inline-block;
   overflow: hidden;
-  width: 120px;
   margin: 10px 5px;
   padding: 10px 0px;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  text-decoration: none;
-  color: #fafafa;
+  width: 120px;
   outline: 0;
   background-color: #333;
+  color: #fafafa;
+  vertical-align: middle;
+  text-decoration: none;
   font-size: 14px;
+  cursor: pointer;
+
+  user-select: none;
 }
 
 .course__ribbon {
@@ -131,51 +133,54 @@ body {
   left: -10px;
   width: 25%;
   height: 36px;
-  transition: 0.5s;
-  text-align: center;
-  color: #333;
   background-color: #f7df1e;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: #333;
+  text-align: center;
+  transition: 0.5s;
 }
 
 .course__ribbon::before {
   position: absolute;
-  z-index: -1;
   left: 0px;
+  z-index: -1;
   width: 10px;
   height: 100%;
+  background-color: #b79e11;
   content: "";
   transition: 0.2s;
   transition-delay: 0.5s;
-  background-color: #b79e11;
 }
 
 .course__ribbon::after {
   position: absolute;
-  z-index: -1;
   top: 100%;
   left: 0px;
+  z-index: -1;
   width: 20px;
   height: 9px;
+  background-color: #b79e11;
   content: "";
   transition: 0.2s;
   transform: rotate(45deg);
-  background-color: #b79e11;
 }
 
 .course__no {
+  top: 50%;
+  left: 50%;
   display: inline-block;
-  transition: 0.3s;
-  transform: translateY(50%);
-  color: #333;
   background-color: #f7df1e;
-  font-size: 20px;
+  color: #333;
   font-weight: 600;
+  font-size: 20px;
+  transition: 0.3s;
+  transform: translate(-50%, -50%);
 }
 
 .course__image {
   position: relative;
   cursor: pointer;
+
   user-select: none;
 }
 
@@ -190,11 +195,11 @@ body {
   display: none;
   width: 100px;
   height: 100px;
-  animation: 1.5s linear infinite rotate;
   border: 5px solid #fafafa;
   border-bottom: 5px solid transparent;
   border-radius: 100%;
   background-color: transparent;
+  animation: 1.5s linear infinite rotate;
 }
 
 @keyframes rotate {
