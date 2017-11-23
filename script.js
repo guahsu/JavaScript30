@@ -22,7 +22,6 @@ function createView() {
   document.querySelector('.courseList').innerHTML = view;
   // 加上滑鼠移入移出的效果監聽
   var courses = Array.from(document.querySelectorAll('.course'));
-  if(!courses) { alert('oh..no'); };
   courses.forEach((course) => {
     course.addEventListener('mouseenter', changeImgaeType);
     course.addEventListener('mouseleave', changeImgaeType);
@@ -55,5 +54,13 @@ function changeImgaeType() {
   }
 }
 
-/** 啟動 */
-createView();
+/** 啟動-用arrow function判斷是否有支援ES6 */
+(function() {
+  try {
+    new Function("(a = 0) => a");
+    createView();
+  }
+  catch (err) {
+    document.querySelector('.courseList').innerHTML = '<h2>這裡空空一片是因為你的瀏覽器不支援ES6的語法<br>請升級你的瀏覽器或使用最新的Chrome吧!</h2>';
+  }
+})();
