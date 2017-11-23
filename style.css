@@ -11,7 +11,6 @@ body {
 }
 .container {
   padding: 30px 0px;
-  min-width: 500px;
   text-align: center;
 }
 
@@ -211,4 +210,13 @@ body {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+      width: 100%;
+    }
+    .course {
+      width: 100%;
+    }
 }

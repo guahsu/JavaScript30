@@ -7,13 +7,11 @@ function createView() {
   datas.forEach((data)=> {
     view += `<li>
               <div class="course ${data.gifYn === 'Y' ? 'hasGif' : ''}">
-                <a href="${data.blog}" target="_blank" onclick="ga('send', 'event', 'button', 'click', 'js30-blog-${data.no}', 1);">
-                  <div class="course__image">                  
-                    <div class="course__ribbon"><div class="course__no">#${data.no}</div></div>
-                    <div class="course__loading"></div>
-                    <img src="${data.blog}demo${data.no}.png" alt="demo${data.no}">
-                  </div>
-                </a>
+                <div class="course__image">
+                  <div class="course__ribbon"><div class="course__no">#${data.no}</div></div>
+                  <div class="course__loading"></div>
+                  <img src="${data.blog}demo${data.no}.png" alt="demo${data.no}">
+                </div>
                 <h2 class="course__title">#${data.no} - ${data.title}</h2>
                 <div class="course__desc">${data.desc}</div>
                 <a class="course__btn" href="${data.blog}" target="_blank" onclick="ga('send', 'event', 'button', 'click', 'js30-blog-${data.no}', 1);">Blog</a>
@@ -36,9 +34,9 @@ function checkLoad(image) {
   var loadEl = image.parentElement.querySelector('.course__loading');
   setTimeout(function() {
     if(image.complete) {
-      loadEl.style.display = 'none'; 
+      loadEl.style.display = 'none';
     }else{
-      loadEl.style.display = 'block'; 
+      loadEl.style.display = 'block';
       checkLoad(image)
     }
   }, 100)
@@ -46,7 +44,7 @@ function checkLoad(image) {
 
 /** 變更圖片類別(滑鼠移入載GIF) */
 function changeImgaeType() {
-  if(this.classList.contains('hasGif')){    
+  if(this.classList.contains('hasGif')){
     var courseImg = this.querySelector('img');
     var isPlay = courseImg.classList.contains('gif-play');
     isPlay ? courseImg.classList.remove('gif-play') : courseImg.classList.add('gif-play');
@@ -59,4 +57,3 @@ function changeImgaeType() {
 
 /** 啟動 */
 createView();
-
