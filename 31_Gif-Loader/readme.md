@@ -1,4 +1,4 @@
-# 30 - Gif Loader
+# 31 - Gif Loader
 
 ![](https://guahsu.io/2017/11/JavaScript30-30-Whack-A-Mole/demo31.gif)
 
