@@ -1,0 +1,58 @@
+.container {
+  padding: 30px 0px;
+  text-align: center;
+}
+.photo {
+  position: relative;  
+  display: inline-block; 
+  margin: 0px 15px;
+  width: 400px;
+  background-color: #fafafa;
+  /* 加上陰影與transition時間，讓hover時有浮起來的感覺 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 0.5s;
+}
+
+.photo:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.photo__img {
+  display: block;
+  max-width: 100%;
+}
+
+.photo__load {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  /* 
+    為了讓載入圖示像是載入圖示再轉的樣子，
+    把四個邊的其中一邊(這裡是bottom)設為透明，
+    再透過border-radius設成圓型，
+  */
+  border: 5px solid #fafafa;
+  border-bottom: 5px solid transparent;
+  border-radius: 100%;
+  background-color: transparent;
+  /* 使用animation動畫，線性且無限循環 呼叫動畫rotate */
+  animation: 1.5s linear infinite rotate;
+}
+
+/* 
+  旋轉動畫，就是從0度轉到360無限循環
+  而裡面的translate是為了讓加載圖示對齊圖片中心，
+  也就是常見的left: 50% + translateX(-50%)這種做法，
+  但因為有用到animation必須把translate設在keyframes裡面。
+*/
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

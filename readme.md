@@ -20,11 +20,11 @@
 遵循原本提供的的資料結構，  
 並在每個練習加上index-GuaHsu.html來放置我所完成的版本。
 
-## 其他
+## 備註
 我會放在自己的[部落格](https://guahsu.io)一份，並在GitHub上也留存一份。  
 若有任何錯誤或指教請在告知，謝謝:)!
 
-##
+## 列表
 | No | 主題 | 筆記 | DEMO |
 | --- | --- | --- | --- |
 | 01 | JavaScript Drum Kit | [筆記](https://guahsu.io/2017/05/JavaScript30-01-Java-Script-Drum-Kit/) | [DEMO](https://guahsu.io/JavaScript30/01_Java-Script-Drum-Kit/index-GuaHsu.html) |
@@ -57,3 +57,8 @@
 | 28 | Video Speed Controller | [筆記](https://guahsu.io/2017/10/JavaScript30-28-Video-Speed-Controller/) | [DEMO](http://guahsu.io/JavaScript30/28_Video-Speed-Controller/index-GuaHsu.html) |
 | 29 | Countdown Timer | [筆記](https://guahsu.io/2017/11/JavaScript30-29-Countdown-Timer/) | [DEMO](http://guahsu.io/JavaScript30/29_Countdown_Timer/index-GuaHsu.html) |
 | 30 | Whack A Mole  | [筆記](https://guahsu.io/2017/11/JavaScript30-30-Whack-A-Mole/) | [DEMO](http://guahsu.io/JavaScript30/30_Whack-A-Mole/index-GuaHsu.html) |
+
+## 其他
+| No | 主題 | 筆記 | DEMO |
+| --- | --- | --- | --- |
+| 31 | Gif-Loader | [筆記](https://guahsu.io/2017/11/JavaScript30-Final-Gif-Loader/) | [DEMO](http://guahsu.io/JavaScript30/31_Gif-Loader/index-GuaHsu.html) |
