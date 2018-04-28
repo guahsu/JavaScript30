@@ -5,6 +5,7 @@
 透過textShadow讓文字的陰影隨滑鼠位置偏移，  
 並稍微帶到ES6的解構賦值的用法。  
 [[BLOG]](https://guahsu.io/2017/10/JavaScript30-16-Mouse-Move-Shadow/)  
+[[DEMO]](http://guahsu.io/JavaScript30/16_Mouse-Move-Shadow/index-GuaHsu.html)  
 
 ## **步驟**
 ### Step1. 設定目標區域與基本偏移量

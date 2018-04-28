@@ -4,7 +4,8 @@
 利用`SpeechRecognition`來做語音識別，  
 並透過`interimResults`來輸出識別的結果。
 
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-20-Speech-Detection)
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-20-Speech-Detection)  
+[[DEMO]](http://guahsu.io/JavaScript30/20_Speech-Detection/index-GuaHsu.html)  
 
 ## **步驟**
 ### Step1. 啟動Local Server

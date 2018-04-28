@@ -5,6 +5,7 @@
 介紹JavaScript中陣列與物件的引用(refrence)及複製(Copying)。
 
 [[BLOG]](https://guahsu.io/2017/08/JavaScript30-14-JavaScript-References-VS-Copying/)  
+[[DEMO]](http://guahsu.io/JavaScript30/14_JavaScript-References-VS-Copying/index-GuaHsu.html)  
 
 ## **步驟**
 ### Step1. 原始型別

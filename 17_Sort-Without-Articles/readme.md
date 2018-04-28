@@ -4,7 +4,8 @@
 ## **主題**
 介紹如何將陣列在排除部分文字的情況下排序。
 
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-17-Sort-Without-Articles/) 
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-17-Sort-Without-Articles/)  
+[[DEMO]](http://guahsu.io/JavaScript30/17_Sort-Without-Articles/index-GuaHsu.html)  
 
 ## **步驟**
 ### Step1. 建立篩選的function

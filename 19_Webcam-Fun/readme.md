@@ -3,7 +3,8 @@
 ## **主題**
 利用`navigator.mediaDevices.getUserMedia`來取得視訊鏡頭影像，並透過`cavas`來達到拍照與濾鏡的效果。
 
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-19-Webcam-Fun)
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-19-Webcam-Fun)    
+[DEMO] -> 安全性問題無法檢視，請在本機執行  
 
 ## **步驟**
 ### Step1. 啟動Local Server

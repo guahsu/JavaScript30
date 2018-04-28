@@ -5,7 +5,8 @@
 ## **主題**
 透過`getBoundingClientRect`與CSS的`transform`來達到HightLight樣式會跟著指定位置移動的效果。
 
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-22-Follow-Along-Link-Highlighter)
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-22-Follow-Along-Link-Highlighter)  
+[[DEMO]](http://guahsu.io/JavaScript30/22_Follow-Along-Link-Highlighter/index-GuaHsu.html)  
 
 ## **步驟**
 ### Step1. 取得頁面元素

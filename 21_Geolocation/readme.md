@@ -3,7 +3,8 @@
 ## **主題**
 利用`navigator.geolocation`來取得裝置的地理位置與速率。
 
-[[BLOG]](https://guahsu.io/2017/10/JavaScript30-21-Geolocation)
+[[BLOG]](https://guahsu.io/2017/10/JavaScript30-21-Geolocation)  
+[[DEMO]](http://guahsu.io/JavaScript30/21_Geolocation/index-GuaHsu.html)  
 
 ## **步驟**
 ### Step1. 啟動Local Server
